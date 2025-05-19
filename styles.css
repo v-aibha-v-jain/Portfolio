@@ -411,6 +411,7 @@ header .container {
 /* Projects Section */
 .project-filters {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-bottom: 40px;
