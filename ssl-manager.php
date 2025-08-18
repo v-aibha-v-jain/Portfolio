@@ -11,7 +11,7 @@
  * 4) If info is successfully shown, display "View Report" button
  * 5) When report is requested (via GET param), show inline formatted
  *    data for each available certificate (from "manager report")
- *
+ *   
  * Debug logs are captured and displayed if DEBUG is enabled.
  ******************************************************/
 
