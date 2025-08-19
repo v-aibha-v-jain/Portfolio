@@ -1,3 +1,49 @@
+/* Improve dark theme visibility for skill cards and hero section */
+body.dark-theme .skills-grid .skill-card {
+    background: #232b36;
+    color: #e5e7eb;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+body.dark-theme .skills-grid .skill-card i,
+body.dark-theme .skill-item h4  {
+    color: #60a5fa;
+}
+
+body.dark-theme .project-links a  {
+    color: #000000;
+}
+
+body.dark-theme .skills-grid .skill-card h3,
+body.dark-theme .skills-grid .skill-card p,
+body.dark-theme .skills-grid .skill-card .progress-bar{
+    color: #e5e7eb !important;
+}
+body.dark-theme .skills-grid .skill-card .progress-bar-bg {
+    background: #374151;
+}
+body.dark-theme .skills-grid .skill-card .progress-bar {
+    background: #60a5fa;
+}
+
+body.dark-theme .hero-content p,
+body.dark-theme .hero-content h1,
+body.dark-theme .hero-content h2 {
+    color: #e5e7eb;
+}
+body.dark-theme .btn-primary {
+    background: #60a5fa;
+    color: #fff;
+}
+body.dark-theme .btn-secondary {
+    background: #374151;
+    color: #e5e7eb;
+    border: 1.5px solid #60a5fa;
+}
+body.dark-theme .social-icons a,
+body.dark-theme .social-links a {
+    background: #374151;
+    color: #60a5fa;
+}
 /* Base Styles */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -6,6 +52,7 @@
     --secondary-color: #1e40af;
     --accent-color: #3b82f6;
     --dark-color: #1f2937;
+    --darkbg-color: #1f2937;
     --light-color: #f9fafb;
     --gray-color: #6b7280;
     --border-color: #e5e7eb;
@@ -13,6 +60,41 @@
     --error-color: #ef4444;
     --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --transition: all 0.3s ease;
+}
+
+body.dark-theme {
+    --primary-color: #60a5fa;
+    --secondary-color: #2563eb;
+    --accent-color: #3b82f6;
+    --dark-color: #f9fafb;
+    --darkbg-color: #394555;
+    --light-color: #1f2937;
+    --gray-color: #d1d5db;
+    --border-color: #374151;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+body.dark-theme .section-header h2,
+body.dark-theme .btn,
+body.dark-theme .footer-bottom {
+    color: var(--dark-color);
+}
+
+body.dark-theme .nav-links,
+body.dark-theme header,
+body.dark-theme .dropdown-content {
+    background-color: var(--light-color);
+}
+
+body.dark-theme .btn-primary {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+body.dark-theme .btn-secondary {
+    background: var(--gray-color);
+    color: #60a5fa;
 }
 
 * {
@@ -208,7 +290,6 @@ header .container {
 .hero {
     padding-top: 150px;
     padding-bottom: 100px;
-    background-color: #f8fafc;
 }
 
 .hero .container {
@@ -347,9 +428,9 @@ header .container {
 }
 
 /* Skills Section */
-.skills {
+/* .skills {
     background-color: #f8fafc;
-}
+} */
 
 .skills-content {
     display: flex;
@@ -522,7 +603,7 @@ header .container {
 
 /* Testimonials Section */
 .testimonials {
-    background-color: #f8fafc;
+    /* background-color: #f8fafc; */
 }
 
 .testimonial-slider {
@@ -542,7 +623,7 @@ header .container {
 }
 
 .testimonial-content {
-    background-color: white;
+    /* background-color: white; */
     padding: 40px 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -724,7 +805,7 @@ header .container {
 
 /* Footer */
 footer {
-    background-color: var(--dark-color);
+    background-color: var(--darkbg-color);
     color: white;
     padding: 80px 0 20px;
 }
