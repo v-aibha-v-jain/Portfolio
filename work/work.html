@@ -1,481 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Timeline | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            overflow: hidden;
-            height: 100vh;
-            color: #fff;
-        }
-
-        /* Sky Background */
-        .sky-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            transition: background-color 1.5s ease;
-        }
-
-        .day-sky {
-            background: linear-gradient(to bottom, #87CEEB, #E0F7FA);
-        }
-
-        .night-sky {
-            background: linear-gradient(to bottom, #0B3D91, #1A237E);
-        }
-
-        .sun-moon {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            left: 75%;
-            transition: all 1.5s ease;
-        }
-
-        .sun {
-            background: #FFC107;
-            box-shadow: 0 0 50px #FFC107, 0 0 100px #FF9800;
-            top: 15%;
-        }
-
-        .moon {
-            background: #F5F5F5;
-            box-shadow: 0 0 20px #E0E0E0, 0 0 40px #BDBDBD;
-            top: 15%;
-        }
-
-        .stars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease;
-        }
-
-        .star {
-            position: absolute;
-            background-color: #fff;
-            border-radius: 50%;
-            animation: twinkle 2s infinite alternate;
-        }
-
-        @keyframes twinkle {
-            0% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
-        .cloud {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50px;
-            animation: float 30s linear infinite;
-        }
-
-        .cloud::before, .cloud::after {
-            content: '';
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-        }
-
-        .cloud::before {
-            width: 50px;
-            height: 50px;
-            top: -20px;
-            left: 10px;
-        }
-
-        .cloud::after {
-            width: 70px;
-            height: 70px;
-            top: -30px;
-            right: 10px;
-        }
-
-        @keyframes float {
-            0% { transform: translateX(-150%); }
-            100% { transform: translateX(150vw); }
-        }
-
-        /* Timeline Container */
-        .timeline-container {
-            position: relative;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-        }
-
-        /* Activity Slides */
-        .activity-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.8s ease, transform 0.8s ease;
-            transform: scale(0.9);
-        }
-
-        .activity-slide.active {
-            opacity: 1;
-            pointer-events: all;
-            transform: scale(1);
-        }
-
-        .activity-card {
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 800px;
-            width: 90%;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .activity-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, #4CAF50, #2196F3);
-        }
-
-        .date-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .ongoing {
-            background: linear-gradient(to right, #FF9800, #F44336);
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .company {
-            font-size: 1.2rem;
-            color: #BBDEFB;
-            margin-bottom: 25px;
-            font-weight: 500;
-        }
-
-        .description {
-            line-height: 1.8;
-            margin-bottom: 25px;
-            color: #E0E0E0;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .tag {
-            padding: 6px 14px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            font-size: 0.9rem;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-3px);
-        }
-
-        /* Navigation */
-        .timeline-nav {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            z-index: 100;
-        }
-
-        .nav-dot {
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-dot.active {
-            background: #fff;
-            transform: scale(1.3);
-        }
-
-        .nav-dot:hover::after {
-            content: attr(data-title);
-            position: absolute;
-            right: 25px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
-
-        /* Scroll Indicator */
-        .scroll-indicator {
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            color: #fff;
-            font-size: 0.9rem;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-            z-index: 100;
-        }
-
-        .scroll-indicator:hover {
-            opacity: 1;
-        }
-
-        .scroll-arrows {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
-        }
-
-        .form-container {
-            background: rgba(30, 30, 30, 0.9);
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 600px;
-            width: 90%;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .form-title {
-            font-size: 1.8rem;
-            margin-bottom: 30px;
-            text-align: center;
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .close-form {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #fff;
-            transition: all 0.3s ease;
-        }
-
-        .close-form:hover {
-            transform: rotate(90deg);
-            color: #F44336;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: #E0E0E0;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checkbox-group input {
-            width: auto;
-        }
-
-        .tag-input {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .tag-input input {
-            flex: 1;
-        }
-
-        .tag-input button {
-            padding: 0 15px;
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .tag-input button:hover {
-            background: linear-gradient(to right, #2E7D32, #1565C0);
-            transform: translateY(-3px);
-        }
-
-        .tags-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .tag-pill {
-            padding: 5px 10px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .tag-pill span {
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .submit-btn {
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            color: white;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: block;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .submit-btn:hover {
-            background: linear-gradient(to right, #2E7D32, #1565C0);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .activity-card {
-                padding: 30px;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .timeline-nav {
-                right: 15px;
-            }
-
-            .nav-dot {
-                width: 12px;
-                height: 12px;
-            }
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 5px;
-            background: linear-gradient(to right, #4CAF50, #2196F3);
-            z-index: 100;
-            transition: width 0.3s ease;
-        }
-    </style>
+    <link rel="stylesheet" href="work.css">
 </head>
+
 <body>
     <a href="../index.html" class="back-btn" style="
         position: fixed;
@@ -498,6 +31,16 @@
         <i class="fas fa-arrow-left"></i>
         Back
     </a>
+
+    <!-- Theme Switcher Button -->
+    <div id="themeSwitcher" style="position: fixed; top: 25px; right: 30px; z-index: 201;">
+        <select id="themeSelect"
+            style="padding: 8px 18px; border-radius: 20px; font-size: 1rem; background: #fff; color: #222; border: 1.5px solid #2196F3; font-weight: 500; outline: none;">
+            <option value="daynight" selected>Days and Nights</option>
+            <option value="newsletter">Newsletter</option>
+            <option value="note">Notes</option>
+        </select>
+    </div>
     <!-- Sky Background -->
     <div class="sky-container day-sky" id="skyContainer">
         <div class="sun-moon sun" id="sunMoon"></div>
@@ -510,8 +53,13 @@
     <!-- Progress Bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Timeline Container -->
+    <!-- day-night Container -->
     <div class="timeline-container" id="timelineContainer">
+        <!-- Activity slides will be added here by JavaScript -->
+    </div>
+
+    <!-- Timeline Container -->
+    <div class="newsletter-container" id="newsletterContainer">
         <!-- Activity slides will be added here by JavaScript -->
     </div>
 
@@ -534,163 +82,250 @@
         let timelineData = [
             {
                 id: 1,
+                title: "Drag_drop_swipe",
+                company: "Open source contribution",
+                startDate: "2025-08-01",
+                endDate: "2025-08-16",
+                ongoing: false,
+                description: "Developed an open-source Node.js module enabling dependency-free drag, drop, and swipe interactions, compatible with both Node.js and vanilla HTML projects.",
+                tags: ["JavaScript", "Node", "Module", "npm i draggrid"],
+                link: [{"npm package":"https://www.npmjs.com/package/draggrid"}],
+                bg: "../image/drag.png",
+                type: "Project"
+            },
+            {
+                id: 1,
+                title: "MoodyAiBot",
+                company: "Personal Project",
+                startDate: "2025-08-01",
+                endDate: "2025-08-16",
+                ongoing: false,
+                description: "Designed an Angular-based AI chatbot, integrating the Gemini API to generate multi-modal responses and improve conversational flow and user engagement",
+                tags: ["Angular", "OpenAI", "ChatBot"],
+                link: [{"GitHub":"https://github.com/v-aibha-v-jain/MoodyAiBot"}],
+                bg: "../images/moody.png",
+                type: "Project"
+            },
+            {
+                id: 1,
+                title: "University Time-table generator",
+                company: "Academic Project",
+                startDate: "2024-11-01",
+                endDate: "2025-02-16",
+                ongoing: false,
+                description: "Automated the scheduling process for a university time-table generator, solving over 100 constraints across departments and labs. This reduced manual effort by 90% and saved over 100 hours of administrative work per semester using Backtracking, Genetic Algorithms, and OR- Tools",
+                tags: ["JavaScript", "Node", "Module"],
+                link: [{"GitHub":"https://github.com/v-aibha-v-jain/TimeTable-generator-MiniProject.git"}],
+                bg: "../images/tt.png",
+                type: "Project"
+            },
+            {
+                id: 14,
+                title: "HOSPITAL-MANAGEMENT-SYSTEM",
+                company: "Bubble.io",
+                startDate: "2023-10-01",
+                endDate: "2023-10-31",
+                ongoing: false,
+                description: "Built a comprehensive no-code hospital management system using Bubble.io, which streamlined patient registration, appointment scheduling, and record management, reducing administrative time by an estimated 30%.",
+                tags: ["No-code", "Bubble.io", "Automation", "Healthcare"],
+                link: [{"GitHub": "https://github.com/v-aibha-v-jain/HOSPITAL-MANAGEMENT-SYSTEM.git"}],
+                bg: "../images/bub.png",
+                type: "Project"
+            },
+            {
+                id: 15,
+                title: "Elcostra",
+                company: "Open Source Project",
+                startDate: "2024-10-01",
+                endDate: "2024-10-31",
+                ongoing: false,
+                description: "Developed and enhanced a web-based JSON viewer for an open-source project, improving data visualization for developers.",
+                tags: ["Web", "JSON", "Visualization", "Open Source"],
+                link: [{"GitHub": "https://github.com/v-aibha-v-jain/elcostra.git"}],
+                bg: "../images/ison.png",
+                type: "Project"
+            },
+            {
+                id: 16,
+                title: "ForkTheCaptcha",
+                company: "Open Source Project",
+                startDate: "2024-10-01",
+                endDate: "2024-10-31",
+                ongoing: false,
+                description: "Contributed to the ForkTheCaptcha open-source project, developing algorithms to generate robust captcha models from synthetic fonts. This improved the security of the project and reduced bot attack success rates by an estimated 40%.",
+                tags: ["Security", "Captcha", "Open Source", "Algorithms"],
+                link: [{"GitHub": "https://github.com/v-aibha-v-jain/ForkTheCaptcha.git"}],
+                bg: "../images/capt.png",
+                type: "Project"
+            },
+            {
+                id: 1,
                 title: "UiPath Smart Automation",
                 company: "Rockwell - ICT",
                 startDate: "2025-07-17",
                 endDate: "2025-08-11",
                 ongoing: false,
                 description: "Complated one month of training on automation using UiPath",
-                tags: ["Automation", "UiPath", "Bots"]
+                tags: ["Automation", "UiPath", "Bots"],
+                link: [],
+                bg: "",
+                type: "Certificate"
             },
             {
-                id: 1,
+                id: 2,
                 title: "DSA - Course completion certificate",
                 company: "GeeksForGeeks",
                 startDate: "2024-11-20",
                 endDate: "2025-04-23",
                 ongoing: false,
                 description: "Completed 160 days of DSA challneges",
-                tags: ["DSA", "Java", "Python"]
+                tags: ["DSA", "Java", "Python"],
+                link: [{"Certificate": "https://media.geeksforgeeks.org/courses/certificates/d3ecb1770ecdc6c10c5260c4af6eda88.pdf"}],
+                bg: "https://media.geeksforgeeks.org/courses/certificates/d3ecb1770ecdc6c10c5260c4af6eda88.pdf",
+                type: "Certificate"
             },
             {
-                id: 1,
+                id: 3,
                 title: "Web Developer",
                 company: "Clayarts",
                 startDate: "2024-04-15",
                 endDate: "2025-04-15",
                 ongoing: false,
                 description: "Created the company website and developed a drag-and-drop mechanism for customizing name plates, allowing users to personalize their designs interactively.",
-                tags: ["Web Development", "MJS", "Hostinger", "API", "Mechanism", "JavaScript", "Frontend", "Backend", "Deployment", "UX/UI"]
+                tags: ["Web Development", "MJS", "Hostinger", "API", "Mechanism", "JavaScript", "Frontend", "Backend", "Deployment", "UX/UI"],
+                link: [{"Website": "https://clayarts.co" }],
+                bg: "../images/clayarts.png",
+                type: "Exp"
             },
             {
-                id: 2,
+                id: 4,
                 title: "AI consultant",
                 company: "NEURICORN SYNDICATE",
                 startDate: "2024-10-15",
                 endDate: "2025-03-15",
                 ongoing: false,
                 description: "Helped the team with setting up pipelines and guided interns on how to work with machine learning models.",
-                tags: ["Consulting", "Technical Communication", "Project Planning", "Teamwork", "Research", "Documentation", "Client Presentations"]
+                tags: ["Consulting", "Technical Communication", "Project Planning", "Teamwork", "Research", "Documentation", "Client Presentations"],
+                link: [],
+                bg: "",
+                type: "Exp"
             },
             {
-                id: 3,
+                id: 5,
                 title: "Web Development Intern",
                 company: "Duzo Kriton PVT LTD",
                 startDate: "2024-10-15",
                 endDate: "2025-03-15",
                 ongoing: false,
                 description: "Developed and maintained the company’s website, ensuring a smooth and responsive user experience. Provided UX recommendations to enhance usability and engagement. Collaborated with the team to improve site performance and functionality.",
-                tags: ["Web Development", "UX/UI", "Responsive Design", "Performance Optimization"]
+                tags: ["Web Development", "UX/UI", "Responsive Design", "Performance Optimization"],
+                link: [""],
+                bg: "../images/duzo.png",
+                type: "exp"
             },
             {
-                id: 4,
+                id: 6,
                 title: "AI-ML Internship",
                 company: "AICTE EduSkill",
                 startDate: "2024-09-15",
                 endDate: "2024-12-15",
                 ongoing: false,
                 description: "Completed an AI-ML Internship at AICTE EduSkill, where I worked on artificial intelligence and machine learning projects. Developed skills in Python, data analysis, and model training. Built and evaluated machine learning models, participated in collaborative projects, and gained hands-on experience with real-world datasets.",
-                tags: ["AI", "Machine Learning", "Python", "Data Analysis", "Model Training", "Projects"]
+                tags: ["AI", "Machine Learning", "Python", "Data Analysis", "Model Training", "Projects"],
+                link: [{"Certificate": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=9cfc57459cbf7b0937b5491381e8ab30"}],
+                bg: "../images/aicte-ai.png",
+                type: "Certificate"
             },
             {
-                id: 5,
+                id: 7,
                 title: "Python Full Stack Development Internship",
                 company: "AICTE EduSkill",
                 startDate: "2024-09-15",
                 endDate: "2024-12-15",
                 ongoing: false,
                 description: "Completed a Python Full Stack Development Internship at AICTE EduSkill. Worked on building web applications using Python frameworks such as Django and Flask. Developed both frontend and backend components, integrated REST APIs, and gained experience with databases, HTML, CSS, and JavaScript. Enhanced my skills in full stack development and deployed several web projects.",
-                tags: ["Python", "Full Stack", "Django", "Flask", "SQL", "REST API", "Web Development"]
+                tags: ["Python", "Full Stack", "Django", "Flask", "SQL", "REST API", "Web Development"],
+                link: [{"Certificate": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=d2f5d2556a09a2f8975de66406cda32a"}],
+                bg: "../images/aicte-py.png",
+                type: "Certificate"
             },
             {
-                id: 6,
+                id: 8,
                 title: "Embedded Systems Internship",
                 company: "AICTE EduSkill",
                 startDate: "2024-06-15",
                 endDate: "2024-09-15",
                 ongoing: false,
                 description: "Completed an Embedded Systems Internship at AICTE EduSkill, where I worked with microcontrollers, sensors, and IoT devices. Gained knowledge in C programming, PCB design, and integrating hardware components for real-world embedded solutions.",
-                tags: ["Micro Chips", "Embeded Systems", "C Programming", "IoT", "PCB Design", "Sensors"]
+                tags: ["Micro Chips", "Embeded Systems", "C Programming", "IoT", "PCB Design", "Sensors"],
+                link: [{"Certificate": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=52ead38079a9a96eb53e3b5fb04502d2"}],
+                bg: "../images/aicte-mic.png",
+                type: "Certificate"
             },
             {
-                id: 7,
+                id: 9,
                 title: "Android Development Internship",
                 company: "AICTE EduSkill, Google Developers",
                 startDate: "2024-04-15",
                 endDate: "2024-06-15",
                 ongoing: false,
                 description: "Completed an Android Development Internship with AICTE EduSkill and Google Developers. Gained hands-on experience in building Android applications using Kotlin, Gradle, and Android Studio. Worked on real-world projects, learned best practices in mobile app development, and improved skills in UI/UX design and app deployment.",
-                tags: ["Kotlin", "Gradle", "Android Studio"]
+                tags: ["Kotlin", "Gradle", "Android Studio"],
+                link: [{"Certificate": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=a8ae86761b18f1a600b68b6d583747b2"}],
+                bg: "../images/aicte-and.png",
+                type: "Certificate"
             },
             {
-                id: 8,
+                id: 10,
                 title: "Automation Virtual Internship",
                 company: "AICTE EduSkill, Blue Prism",
                 startDate: "2024-02-15",
                 endDate: "2024-04-15",
                 ongoing:false,
                 description: "Completed a virtual internship focused on automation using Blue Prism. Learned about robotic process automation (RPA), workflow design, and automating repetitive business processes. Gained hands-on experience with Blue Prism tools and developed automation solutions for real-world scenarios.",
-                tags: ["Automation", "Blue-Prism", "RPA"]
+                tags: ["Automation", "Blue-Prism", "RPA"],
+                link: [{"Certificate": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=7da9a939e9fcb83d6d5e28af068681df"}],
+                bg: "../images/aicte-auto.png",
+                type: "Certificate"
             },
             {
-                id: 9,
+                id: 11,
                 title: "Google Cybersecurity Certificate",
                 company: "Grow with Google Coursera",
                 startDate: "2023-09-15",
                 endDate: "2024-02-15",
                 ongoing: false,
                 description: "Completed the Google Cybersecurity Certificate on Coursera, covering essential topics such as network security, Linux, security threads, and hands-on labs. Developed practical skills in identifying and mitigating security risks, and gained a strong foundation in cybersecurity best practices.",
-                tags: ["Cybersecurity", "Linux", "Threads", "Networking"]
+                tags: ["Cybersecurity", "Linux", "Threads", "Networking"],
+                link: [{"Certificate": "https://coursera.org/verify/professional-cert/BLNW5FY4VVMM"}],
+                bg: "../images/gc.png",
+                type: "Certificate"
             },
             {
-                id: 10,
+                id: 12,
                 title: "AI-ML Internship",
                 company: "Rinex Technologies",
                 startDate: "2023-06-05",
                 endDate: "2023-08-27",
                 ongoing: false,
                 description: "Completed an AI-ML internship at Rinex Technologies, where I worked on real-world machine learning projects. Gained hands-on experience in data preprocessing, exploratory data analysis (EDA), and building predictive models. Collaborated with a team to develop and deploy AI solutions, and enhanced my understanding of the end-to-end ML workflow.",
-                tags: ["Machine Learning", "AI Models", "EDA", "Projects"]
+                tags: ["Machine Learning", "AI Models", "EDA", "Projects"],
+                link: [],
+                bg: "../images/rinex.png",
+                type: "Certificate"
             },
             {
-                id: 11,
+                id: 13,
                 title: "Smart India Hackathon 2023",
                 company: "Hackathon Preparation",
                 startDate: "2023-08-1",
                 endDate: "2023-09-30",
                 ongoing: false,
                 description: "Participated in the Smart India Hackathon 2023, where I worked on a web application project involving web scraping and research work. Learned web scraping techniques from my teacher, which proved extremely helpful in gathering and processing data for the project. This experience enhanced my practical skills and deepened my understanding of web technologies.",
-                tags: ["Project", "WebApp", "WebScrapping", "Research work"]
-            },
-            {
-                id: 12,
-                title: "Started Learning Python and AI-ML",
-                company: "Self-taught",
-                startDate: "2022",
-                endDate: "2023",
-                ongoing: false,
-                description: "Started learning Python by exploring the basics and gradually moved on to building machine learning models for prediction tasks. Practiced web scraping to collect data and automated repetitive tasks using Python scripts. Developed simple web apps to showcase ML models and data analysis.",
-                tags: ["Python", "EDA", "ML models", "Py web apps", "Bs4 & Selenium"]
-            },
-            {
-                id: 13,
-                title: "Started Learning Java Development",
-                company: "Self-taught",
-                startDate: "2021",
-                endDate: "2022",
-                ongoing: false,
-                description: "Started learning Java by building simple applications and experimenting with creating executable JAR files that worked like standalone apps. Explored Java fundamentals, object-oriented programming, and tried making a basic game to understand graphics and event handling.",
-                tags: ["Java", "DBMS", "Multi-threading", "UI/UX"]
-            },
-            {
-                id: 14,
-                title: "Started Learning Web Development",
-                company: "self-taught",
-                startDate: "2020",
-                endDate: "2021",
-                ongoing: false,
-                description: "Started learning HTML, CSS, and JavaScript by exploring online resources and tutorials. Practiced by cloning popular websites and experimenting with layouts. Created custom logos and graphics using only CSS to improve my design and coding skills.",
-                tags: ["Web Development", "HTML", "CSS", "JS", "PHP"]
+                tags: ["Project", "WebApp", "WebScrapping", "Research work"],
+                link: [],
+                bg: "../images/sih-23.png",
+                type: "Project"
             }
         ];
 
@@ -911,6 +546,23 @@
         setTimeout(() => {
             scrollIndicator.style.opacity = '0';
         }, 5000);
+
+
+        // Theme Switcher Logic
+        const themeSelect = document.getElementById('themeSelect');
+        themeSelect.addEventListener('change', function () {
+            if (this.value === 'newsletter') {
+                document.body.classList.add('newsletter-theme');
+                document.body.classList.remove('daynight-theme');
+            } else {
+                document.body.classList.remove('newsletter-theme');
+                document.body.classList.add('daynight-theme');
+            }
+        });
+        // Set default theme
+        document.body.classList.add('daynight-theme');
+
+
     </script>
 </body>
 </html>
