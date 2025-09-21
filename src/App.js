@@ -1,0 +1,40 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
+import './Portfolio.css';
+import Header from './components/Header';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import Work from './components/Work';
+
+// Main Portfolio Page Component
+const PortfolioPage = () => {
+  return (
+    <>
+      <Header />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Contact />
+    </>
+  );
+};
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<PortfolioPage />} />
+          <Route path="/work" element={<Work />} />
+        </Routes>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
