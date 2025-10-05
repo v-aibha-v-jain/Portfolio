@@ -1,12 +1,26 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import profileImage from '../assets/images/profile.jpeg';
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    // If not on home page, navigate to home then scroll after a short delay
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => scrollToSection('contact'), 150);
+    } else {
+      scrollToSection('contact');
     }
   };
 
@@ -19,7 +33,7 @@ const Hero = () => {
           <p>A Software Developer with experience in full-stack development, cloud technologies (AWS, Firebase), and machine learning. Contributed to more than 10 full-stack and AI projects, delivering scalable applications and collaborating effectively within team environments.</p>
           <div className="hero-buttons">
             <Link to="/work" className="btn btn-primary">View My Work</Link>
-            <a href="#contact" className="btn btn-secondary" onClick={() => scrollToSection('contact')}>Contact Me</a>
+            <a href="/#contact" className="btn btn-secondary" onClick={handleContactClick}>Contact Me</a>
           </div>
           <div className="social-icons">
             <a href="https://github.com/v-aibha-v-jain"><i className="fab fa-github"></i></a>
