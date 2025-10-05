@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
+import { useNavigate, useLocation } from 'react-router-dom'; // added
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,8 @@ const Contact = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const navigate = useNavigate(); // added
+  const location = useLocation(); // added
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -59,6 +62,22 @@ const Contact = () => {
     } catch (error) {
       console.error('Error subscribing to newsletter:', error);
       alert('Error subscribing. Please try again.');
+    }
+  };
+
+  const scrollToSection = (sectionId) => { // added
+    const el = document.getElementById(sectionId);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleAnchorClick = (e, sectionId) => { // added
+    e.preventDefault();
+    if (location.pathname !== '/') {
+      navigate('/'); // navigate to home first
+      // wait for home route to render then scroll
+      setTimeout(() => scrollToSection(sectionId), 150);
+    } else {
+      scrollToSection(sectionId);
     }
   };
 
@@ -166,11 +185,11 @@ const Contact = () => {
             <div className="footer-links">
               <h3>Quick Links</h3>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" onClick={(e) => handleAnchorClick(e, 'home')}>Home</a></li>
+                <li><a href="#about" onClick={(e) => handleAnchorClick(e, 'about')}>About</a></li>
+                <li><a href="#skills" onClick={(e) => handleAnchorClick(e, 'skills')}>Skills</a></li>
+                <li><a href="#projects" onClick={(e) => handleAnchorClick(e, 'projects')}>Projects</a></li>
+                <li><a href="#contact" onClick={(e) => handleAnchorClick(e, 'contact')}>Contact</a></li>
               </ul>
             </div>
             <div className="footer-newsletter">
