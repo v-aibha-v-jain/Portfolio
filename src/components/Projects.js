@@ -7,6 +7,26 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'Agent-task-manager',
+      description: 'MERN stack application with JWT authentication and automated CSV/Excel task processing',
+      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=agent-task-manager&theme=radical',
+      categories: ['web', 'js', 'ui'],
+      links: [
+        { url: 'https://github.com/v-aibha-v-jain/agent-task-manager.git', icon: 'fab fa-github', text: 'GitHub' }
+      ]
+    },
+    {
+      id: 2,
+      title: 'Email-classifier',
+      description: 'Next.js/React app integrating Gmail API with OpenAI GPT-4o for email categorization',
+      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=email-classifier&theme=radical',
+      categories: ['web', 'js', 'ml'],
+      links: [
+        { url: 'https://github.com/v-aibha-v-jain/email-classifier.git', icon: 'fab fa-github', text: 'GitHub' }
+      ]
+    },
+    {
+      id: 3,
       title: 'drag_drop_swipe | draggrid',
       description: 'Open Source, Drag, Drop and Swipe node module',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=drag_drop_swipe&theme=radical',
@@ -16,7 +36,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 2,
+      id: 4,
       title: 'Clayarts',
       description: 'Freelance, Web Development',
       image: clayartsImage,
@@ -26,7 +46,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 3,
+      id: 5,
       title: 'University Time-table generator',
       description: 'Academic project',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=TimeTable-generator-MiniProject&theme=radical',
@@ -36,7 +56,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 4,
+      id: 6,
       title: 'MoodyAiBot',
       description: 'Personal project, Mood-based AI Chatbot',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=MoodyAiBot&theme=radical',
@@ -46,7 +66,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 5,
+      id: 7,
       title: 'ForkTheCaptcha',
       description: 'Open Source, CAPTCHA, Web Security',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=ForkTheCaptcha&theme=radical',
@@ -56,7 +76,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 6,
+      id: 8,
       title: 'elcostra',
       description: 'Open Source, Web App, Json view',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=elcostra&theme=radical',
@@ -66,7 +86,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 7,
+      id: 9,
       title: 'Hospital Management System',
       description: 'Bubble-no code website',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=HOSPITAL-MANAGEMENT-SYSTEM&theme=radical',
@@ -76,7 +96,7 @@ const Projects = () => {
       ]
     },
     {
-      id: 8,
+      id: 10,
       title: 'Fruit Database Analysis',
       description: 'Python, Machine Learning, Exploratory Data Analysis, Streamlit App',
       image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=FRUIT_DATABASE_EDA_AND_ML_WITH_APP.&theme=radical',
@@ -93,7 +113,7 @@ const Projects = () => {
     { key: 'app', label: 'App' },
     { key: 'js', label: 'JavaScript' },
     { key: 'ui', label: 'UI/UX' },
-    { key: 'ml', label: 'ML' },
+    { key: 'ml', label: 'AI-ML' },
     { key: 'opensource', label: 'Open Source Contribution' }
   ];
 
