@@ -2,6 +2,32 @@
   "timeline": [
     {
       "id": 1,
+      "title": "Agent-task-manager",
+      "company": "Personal Project",
+      "startDate": "2025-10-17",
+      "endDate": "2025-10-18",
+      "ongoing": false,
+      "description": "Developed and deployed a secure MERN stack (MongoDB, Express, React, Node.js) application featuring JWT authentication and automated CSV/Excel task processing via Multer. The system maintained 100% data integrity upon file upload.",
+      "tags": ["MERN", "JWT", "Automation"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/agent-task-manager"}],
+      "bg": "task.png",
+      "type": "Project"
+    },
+    {
+      "id": 2,
+      "title": "Email-classifier",
+      "company": "Personal Project",
+      "startDate": "2025-10-16",
+      "endDate": "2025-10-17",
+      "ongoing": false,
+      "description": "Built and deployed a Next.js/React application integrating the Gmail API with OpenAI GPT-4o to automatically categorize incoming emails into 6 distinct labels (e.g., Promotions, Important, Spam). This system achieved a 92% classification accuracy in testing.",
+      "tags": ["Next.js", "react-router", "GCP OAuth", "GCP Gmail plugin", "OpenAI GPT-4o"],
+      "link": [{"Website": "https://email-classifier-liart.vercel.app/", "GitHub": "https://github.com/v-aibha-v-jain/email-classifier"}],
+      "bg": "email.png",
+      "type": "Project"
+    },
+    {
+      "id": 3,
       "title": "Drag_drop_swipe",
       "company": "Open source contribution",
       "startDate": "2025-08-01",
@@ -14,7 +40,7 @@
       "type": "Project"
     },
     {
-      "id": 2,
+      "id": 4,
       "title": "MoodyAiBot",
       "company": "Personal Project",
       "startDate": "2025-08-01",
@@ -27,7 +53,7 @@
       "type": "Project"
     },
     {
-      "id": 3,
+      "id": 5,
       "title": "University Time-table generator",
       "company": "Academic Project",
       "startDate": "2024-11-01",
@@ -40,7 +66,7 @@
       "type": "Project"
     },
     {
-      "id": 4,
+      "id": 6,
       "title": "HOSPITAL-MANAGEMENT-SYSTEM",
       "company": "Bubble.io",
       "startDate": "2023-10-01",
@@ -53,7 +79,7 @@
       "type": "Project"
     },
     {
-      "id": 5,
+      "id": 7,
       "title": "Elcostra",
       "company": "Open Source Project",
       "startDate": "2024-10-01",
@@ -66,7 +92,7 @@
       "type": "Project"
     },
     {
-      "id": 6,
+      "id": 8,
       "title": "ForkTheCaptcha",
       "company": "Open Source Project",
       "startDate": "2024-10-01",
@@ -79,7 +105,7 @@
       "type": "Project"
     },
     {
-      "id": 7,
+      "id": 9,
       "title": "UiPath Smart Automation",
       "company": "Rockwell - ICT",
       "startDate": "2025-07-17",
@@ -92,7 +118,7 @@
       "type": "Certificate"
     },
     {
-      "id": 8,
+      "id": 10,
       "title": "DSA - Course completion certificate",
       "company": "GeeksForGeeks",
       "startDate": "2024-11-20",
@@ -105,7 +131,7 @@
       "type": "Certificate"
     },
     {
-      "id": 9,
+      "id": 11,
       "title": "Web Developer",
       "company": "Clayarts",
       "startDate": "2024-04-15",
@@ -118,7 +144,7 @@
       "type": "Exp"
     },
     {
-      "id": 10,
+      "id": 12,
       "title": "AI consultant",
       "company": "NEURICORN SYNDICATE",
       "startDate": "2024-10-15",
@@ -131,7 +157,7 @@
       "type": "Exp"
     },
     {
-      "id": 11,
+      "id": 13,
       "title": "Web Development Intern",
       "company": "Duzo Kriton PVT LTD",
       "startDate": "2024-10-15",
@@ -144,7 +170,7 @@
       "type": "exp"
     },
     {
-      "id": 12,
+      "id": 14,
       "title": "AI-ML Internship",
       "company": "AICTE EduSkill",
       "startDate": "2024-09-15",
@@ -157,7 +183,7 @@
       "type": "Certificate"
     },
     {
-      "id": 13,
+      "id": 15,
       "title": "Smart India Hackathon 2023",
       "company": "Hackathon Preparation",
       "startDate": "2023-08-1",

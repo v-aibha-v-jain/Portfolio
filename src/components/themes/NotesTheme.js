@@ -15,6 +15,8 @@ import duzoImage from '../../assets/images/duzo.png';
 import aicteAiImage from '../../assets/images/aicte-ai.png';
 import sihImage from '../../assets/images/sih-23.png';
 import dsa from '../../assets/images/dsa.png';
+import email from '../../assets/images/email.png';
+import task from '../../assets/images/task.png';
 
 const NotesTheme = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,7 +36,9 @@ const NotesTheme = () => {
     'duzo.png': duzoImage,
     'aicte-ai.png': aicteAiImage,
     'sih-23.png': sihImage,
-    'dsa.png': dsa
+    'dsa.png': dsa,
+    'email.png': email,
+    'task.png': task
   };
 
   // Process and sort timeline data
@@ -178,22 +182,19 @@ const NotesTheme = () => {
               <div className="book-links">
                 {currentItem.link.map((linkObj, linkIndex) => {
                   if (linkObj && typeof linkObj === 'object') {
-                    const entries = Object.entries(linkObj);
-                    if (entries.length > 0) {
-                      const [label, url] = entries[0];
-                      return (
-                        <a 
-                          key={linkIndex}
-                          href={url} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="book-link"
-                        >
-                          <FontAwesomeIcon icon={faExternalLinkAlt} />
-                          <span>{label}</span>
-                        </a>
-                      );
-                    }
+                    // Map through ALL entries in each link object, not just the first one
+                    return Object.entries(linkObj).map(([label, url], entryIndex) => (
+                      <a 
+                        key={`${linkIndex}-${entryIndex}`}
+                        href={url} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="book-link"
+                      >
+                        <FontAwesomeIcon icon={faExternalLinkAlt} />
+                        <span>{label}</span>
+                      </a>
+                    ));
                   }
                   return null;
                 })}
