@@ -70,10 +70,10 @@ const NewsletterTheme = () => {
   return (
     <div className="newsletter-theme-container">
       {/* Header Section */}
-      <div className="newsletter-header">
+      {/* <div className="newsletter-header">
         <h1 className="newsletter-title"></h1>
         <p className="newsletter-subtitle"></p>
-      </div>
+      </div> */}
 
       {/* Timeline Grid */}
       <div className="timeline-grid">

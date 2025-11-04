@@ -120,7 +120,7 @@ const NotesTheme = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [currentIndex, isAnimating]);
+  });
 
   const currentItem = timelineData[currentIndex];
 

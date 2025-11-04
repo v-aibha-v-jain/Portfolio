@@ -224,7 +224,7 @@ const DayNightTheme = () => {
       window.removeEventListener("touchmove", handleTouchMove);
       window.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [currentIndex, isScrolling]);
+  });
 
   return (
     <>
