@@ -20,6 +20,11 @@ import aicteAiImage from "../../assets/images/aicte-ai.png";
 import sihImage from "../../assets/images/sih-23.png";
 import email from "../../assets/images/email.png";
 import task from "../../assets/images/task.png";
+import cli from "../../assets/images/cli.png";
+import ddsa from "../../assets/images/ddsa.png";
+import goto from "../../assets/images/goto.png";
+import rpa from "../../assets/images/rpa.png";
+import va from "../../assets/images/va.png";
 
 const DayNightTheme = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -43,6 +48,11 @@ const DayNightTheme = () => {
     "sih-23.png": sihImage,
     "email.png": email,
     "task.png": task,
+    "cli.png": cli,
+    "ddsa.png": ddsa,
+    "goto.png": goto,
+    "rpa.png": rpa,
+    "va.png": va,
   };
 
   // Process timeline data from JSON with image mapping

@@ -2,6 +2,58 @@
   "timeline": [
     {
       "id": 1,
+      "title": "VA-task-executor",
+      "description": "Desktop voice assistant that listens and executes commands (open app/file/folder/url, read files, etc.)",
+      "company": "Personal Project",
+      "startDate": "2025-11-01",
+      "endDate": "2025-11-03",
+      "ongoing": false,
+      "tags": ["Python", "SpeechRecognition", "pyttsx3", "llm", "Automation"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/VA-task-executor"}],
+      "bg": "va.png",
+      "type": "Project"
+    },
+    {
+      "id": 2,
+      "title": "CLIBrowser",
+      "description": "Browser extension with a terminal-style interface",
+      "company": "Personal Project",
+      "startDate": "2025-10-01",
+      "endDate": "2025-11-03",
+      "ongoing": false,
+      "tags": ["JavaScript", "Browser Extension", "Terminal"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/clibrowser"}],
+      "bg": "cli.png",
+      "type": "Project"
+    },
+    {
+      "id": 3,
+      "title": "GoTo",
+      "company": "Open source contribution",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-31",
+      "ongoing": false,
+      "description": "Browser extension for quick navigation and shortcuts",
+      "tags": ["JavaScript", "Browser Extension", "Open Source"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/GoTo"}],
+      "bg": "goto.png",
+      "type": "Project"
+    },
+    {
+      "id": 4,
+      "title": "DecodeDsa",
+      "description": "Open source contribution, visualize DSA problems and solutions",
+      "company": "Open source contribution",
+      "startDate": "2025-10-01",
+      "endDate": "2025-10-31",
+      "ongoing": false,
+      "tags": ["JavaScript", "Visualization", "Open Source"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/DecodeDsa"}],
+      "bg": "ddsa.png",
+      "type": "Project"
+    },
+    {
+      "id": 1,
       "title": "Agent-task-manager",
       "company": "Personal Project",
       "startDate": "2025-10-17",
@@ -114,7 +166,7 @@
       "description": "Completed one month of training on automation using UiPath",
       "tags": ["Automation", "UiPath", "Bots"],
       "link": [],
-      "bg": "",
+      "bg": "rpa.png",
       "type": "Certificate"
     },
     {

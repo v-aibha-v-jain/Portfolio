@@ -17,6 +17,11 @@ import sihImage from '../../assets/images/sih-23.png';
 import dsa from '../../assets/images/dsa.png';
 import email from '../../assets/images/email.png';
 import task from '../../assets/images/task.png';
+import cli from "../../assets/images/cli.png";
+import ddsa from "../../assets/images/ddsa.png";
+import goto from "../../assets/images/goto.png";
+import rpa from "../../assets/images/rpa.png";
+import va from "../../assets/images/va.png";
 
 const NotesTheme = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,7 +43,12 @@ const NotesTheme = () => {
     'sih-23.png': sihImage,
     'dsa.png': dsa,
     'email.png': email,
-    'task.png': task
+    'task.png': task,
+    'cli.png': cli,
+    'ddsa.png': ddsa,
+    'goto.png': goto,
+    'rpa.png': rpa,
+    'va.png': va
   };
 
   // Process and sort timeline data
