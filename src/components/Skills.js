@@ -3,19 +3,19 @@ import React from 'react';
 const Skills = () => {
   const programmingSkills = [
     { name: 'Web Development', icon: 'fas fa-code', percentage: 95 },
-    { name: 'React', icon: 'fab fa-react', percentage: 90 },
-    { name: 'Angular', icon: 'fab fa-angular', percentage: 90 },
+    { name: 'MERN', icon: 'fab fa-react', percentage: 80 },
     { name: 'PHP', icon: 'fab fa-php', percentage: 90 },
     { name: 'Machine Learning', icon: 'fas fa-robot', percentage: 60 },
     { name: 'Python', icon: 'fab fa-python', percentage: 75 },
     { name: 'DBMS', icon: 'fas fa-database', percentage: 80 },
     { name: 'Automation', icon: 'fas fa-cogs', percentage: 70 },
     { name: 'C/C++', icon: 'fas fa-code-branch', percentage: 60 },
-    { name: 'Java and Kotlin', icon: 'fab fa-android', percentage: 50 }
+    { name: 'Java', icon: 'fab fa-java', percentage: 50 }
   ];
 
   const otherSkills = [
     { name: 'Git', icon: 'fab fa-git-alt', percentage: 90 },
+    { name: 'Cloud Computing', icon: 'fas fa-cloud', percentage: 75 },
     { name: 'UI/UX', icon: 'fas fa-mobile-alt', percentage: 85 },
     { name: 'Figma', icon: 'fas fa-paint-brush', percentage: 85 },
     { name: 'Linux', icon: 'fab fa-linux', percentage: 65 }
