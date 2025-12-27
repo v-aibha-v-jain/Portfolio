@@ -1,5 +1,18 @@
 import React, { useState } from 'react';
-import clayartsImage from '../assets/images/clayarts.png';
+import gotoImage from '../assets/repos/goto.png';
+import dsaImage from '../assets/repos/dsa.png';
+import cliImage from '../assets/repos/cli.png';
+import vaImage from '../assets/repos/va.png';
+import agentImage from '../assets/repos/agent.png';
+import mailImage from '../assets/repos/mail.png';
+import ddsImage from '../assets/repos/dds.png';
+import clayartsImage from '../assets/repos/clayarts.png';
+import ttImage from '../assets/repos/tt.png';
+import moodImage from '../assets/repos/mood.png';
+import captchaImage from '../assets/repos/captcha.png';
+import elcostraImage from '../assets/repos/elcostra.png';
+import hospitalImage from '../assets/repos/hospital.png';
+import mlImage from '../assets/repos/ml.png';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -9,7 +22,7 @@ const Projects = () => {
       id: 1,
       title: 'GoTo',
       description: 'Browser extension for quick navigation and shortcuts',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=GoTo&theme=radical',
+      image: gotoImage,
       categories: ['opensource', 'web', 'ui', 'js'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/GoTo', icon: 'fab fa-github', text: 'GitHub' }
@@ -19,7 +32,7 @@ const Projects = () => {
       id: 2,
       title: 'DecodeDsa',
       description: 'Open source contribution, visualize DSA problems and solutions',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=DecodeDsa&theme=radical',
+      image: dsaImage,
       categories: ['opensource', 'web', 'js', 'ui'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/DecodeDsa', icon: 'fab fa-github', text: 'GitHub' }
@@ -29,7 +42,7 @@ const Projects = () => {
       id: 3,
       title: 'CLIBrowser',
       description: 'Browser extension with a terminal-style interface',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=clibrowser&theme=radical',
+      image: cliImage,
       categories: ['web', 'ui', 'js'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/clibrowser', icon: 'fab fa-github', text: 'GitHub' }
@@ -39,7 +52,7 @@ const Projects = () => {
       id: 4,
       title: 'VA-task-executor',
       description: 'Desktop voice assistant that listens and executes commands (open app/file/folder/url, read files, etc.)',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=VA-task-executor&theme=radical',
+      image: vaImage,
       categories: ['app', 'ml', 'py'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/VA-task-executor', icon: 'fab fa-github', text: 'GitHub' }
@@ -49,7 +62,7 @@ const Projects = () => {
       id: 5,
       title: 'Agent-task-manager',
       description: 'MERN stack application with JWT authentication and automated CSV/Excel task processing',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=agent-task-manager&theme=radical',
+      image: agentImage,
       categories: ['web', 'js', 'ui'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/agent-task-manager.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -59,7 +72,7 @@ const Projects = () => {
       id: 6,
       title: 'Email-classifier',
       description: 'Next.js/React app integrating Gmail API with OpenAI GPT-4o for email categorization',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=email-classifier&theme=radical',
+      image: mailImage,
       categories: ['web', 'js', 'ml'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/email-classifier.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -69,7 +82,7 @@ const Projects = () => {
       id: 7,
       title: 'drag_drop_swipe | draggrid',
       description: 'Open Source, Drag, Drop and Swipe node module',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=drag_drop_swipe&theme=radical',
+      image: ddsImage,
       categories: ['opensource', 'js', 'ui'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/drag_drop_swipe.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -89,7 +102,7 @@ const Projects = () => {
       id: 9,
       title: 'University Time-table generator',
       description: 'Academic project',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=TimeTable-generator-MiniProject&theme=radical',
+      image: ttImage,
       categories: ['web', 'js', 'ml', 'ui'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/TimeTable-generator-MiniProject.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -99,7 +112,7 @@ const Projects = () => {
       id: 10,
       title: 'MoodyAiBot',
       description: 'Personal project, Mood-based AI Chatbot',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=MoodyAiBot&theme=radical',
+      image: moodImage,
       categories: ['web', 'js', 'ml', 'py'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/MoodyAiBot.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -109,7 +122,7 @@ const Projects = () => {
       id: 11,
       title: 'ForkTheCaptcha',
       description: 'Open Source, CAPTCHA, Web Security',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=ForkTheCaptcha&theme=radical',
+      image: captchaImage,
       categories: ['opensource', 'web', 'ui'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/ForkTheCaptcha.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -119,7 +132,7 @@ const Projects = () => {
       id: 12,
       title: 'elcostra',
       description: 'Open Source, Web App, Json view',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=elcostra&theme=radical',
+      image: elcostraImage,
       categories: ['web', 'ui', 'opensource'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/elcostra.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -129,7 +142,7 @@ const Projects = () => {
       id: 13,
       title: 'Hospital Management System',
       description: 'Bubble-no code website',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=HOSPITAL-MANAGEMENT-SYSTEM&theme=radical',
+      image: hospitalImage,
       categories: ['web'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/HOSPITAL-MANAGEMENT-SYSTEM.git', icon: 'fab fa-github', text: 'GitHub' }
@@ -139,7 +152,7 @@ const Projects = () => {
       id: 14,
       title: 'Fruit Database Analysis',
       description: 'Python, Machine Learning, Exploratory Data Analysis, Streamlit App',
-      image: 'https://github-readme-stats.vercel.app/api/pin/?username=v-aibha-v-jain&repo=FRUIT_DATABASE_EDA_AND_ML_WITH_APP.&theme=radical',
+      image: mlImage,
       categories: ['ml', 'app', 'py'],
       links: [
         { url: 'https://github.com/v-aibha-v-jain/FRUIT_DATABASE_EDA_AND_ML_WITH_APP..git', icon: 'fab fa-github', text: 'GitHub' }
@@ -158,8 +171,8 @@ const Projects = () => {
     { key: 'opensource', label: 'Open Source Contribution' }
   ];
 
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
+  const filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(project => project.categories.includes(activeFilter));
 
   return (
@@ -171,7 +184,7 @@ const Projects = () => {
         </div>
         <div className="project-filters">
           {filters.map(filter => (
-            <button 
+            <button
               key={filter.key}
               className={`filter-btn ${activeFilter === filter.key ? 'active' : ''}`}
               onClick={() => setActiveFilter(filter.key)}
@@ -182,9 +195,9 @@ const Projects = () => {
         </div>
         <div className="projects-grid">
           {filteredProjects.map(project => (
-            <div 
-              key={project.id} 
-              className="project-item" 
+            <div
+              key={project.id}
+              className="project-item"
               data-category={project.categories.join(' ')}
             >
               <div className="project-img">
@@ -195,9 +208,9 @@ const Projects = () => {
                     <p>{project.description}</p>
                     <div className="project-links">
                       {project.links.map((link, index) => (
-                        <a 
+                        <a
                           key={index}
-                          href={link.url} 
+                          href={link.url}
                           className="btn-small"
                           target="_blank"
                           rel="noopener noreferrer"
