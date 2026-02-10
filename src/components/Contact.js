@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
-import { useNavigate, useLocation } from 'react-router-dom'; // added
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,8 +13,8 @@ const Contact = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-  const navigate = useNavigate(); // added
-  const location = useLocation(); // added
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -65,16 +65,15 @@ const Contact = () => {
     }
   };
 
-  const scrollToSection = (sectionId) => { // added
+  const scrollToSection = (sectionId) => {
     const el = document.getElementById(sectionId);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleAnchorClick = (e, sectionId) => { // added
+  const handleAnchorClick = (e, sectionId) => {
     e.preventDefault();
     if (location.pathname !== '/') {
-      navigate('/'); // navigate to home first
-      // wait for home route to render then scroll
+      navigate('/');
       setTimeout(() => scrollToSection(sectionId), 150);
     } else {
       scrollToSection(sectionId);

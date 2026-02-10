@@ -3,10 +3,8 @@ import React, { useState, useEffect } from 'react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       setIsDarkTheme(true);
@@ -30,11 +28,8 @@ const Header = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    // Check if we're on the correct page (home page)
     if (window.location.hash === '#/work' || window.location.pathname.includes('/work')) {
-      // If on work page, navigate to home first
       window.location.hash = '#/';
-      // Wait for navigation to complete, then scroll
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -42,24 +37,18 @@ const Header = () => {
         }
       }, 100);
     } else {
-      // Already on home page, just scroll
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
-    setIsMenuOpen(false); // Close mobile menu after clicking
-    setIsDropdownOpen(false); // Close dropdown after clicking
+    setIsMenuOpen(false);
   };
 
   const handleNavClick = (e, sectionId) => {
-    e.preventDefault(); // Prevent default link behavior
-    e.stopPropagation(); // Stop event bubbling
+    e.preventDefault();
+    e.stopPropagation();
     scrollToSection(sectionId);
-  };
-
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
   };
 
   return (
@@ -70,26 +59,32 @@ const Header = () => {
         </div>
         <nav>
           <ul className={`nav-links ${isMenuOpen ? 'active' : ''}`}>
-            <li><a href="/#home" onClick={(e) => handleNavClick(e, 'home')}>Home</a></li>
             <li><a href="/#about" onClick={(e) => handleNavClick(e, 'about')}>About</a></li>
             <li><a href="/#skills" onClick={(e) => handleNavClick(e, 'skills')}>Skills</a></li>
+            <li><a href="/#work" onClick={(e) => handleNavClick(e, 'work')}>Work</a></li>
+            <li><a href="/#achievements" onClick={(e) => handleNavClick(e, 'achievements')}>Achievements</a></li>
             <li><a href="/#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a></li>
+            <li><a href="/#certificates" onClick={(e) => handleNavClick(e, 'certificates')}>Certificates</a></li>
             <li><a href="/#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a></li>
-            <li className={`portfolio-dropdown ${isDropdownOpen ? 'active' : ''}`}>
-              <button type="button" onClick={(e) => { e.preventDefault(); toggleDropdown(); }} className="nav-button">
-                More Portfolios <i className="fas fa-chevron-down"></i>
-              </button>
-              <div className="dropdown-content">
-                <button type="button" onClick={(e) => { e.preventDefault(); toggleTheme(); setIsDropdownOpen(false); }} className="nav-button">
-                  {isDarkTheme ? 'Light Theme' : 'Dark Theme'}
-                </button>
-              </div>
-            </li>
           </ul>
-          <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
+          <div className="nav-controls">
+            <button
+              type="button"
+              onClick={(e) => { e.preventDefault(); toggleTheme(); }}
+              className="theme-toggle-btn"
+              title={isDarkTheme ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+            >
+              {isDarkTheme ? (
+                <i className="fas fa-sun"></i>
+              ) : (
+                <i className="fas fa-moon"></i>
+              )}
+            </button>
+            <div className={`hamburger ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
+              <span className="bar"></span>
+              <span className="bar"></span>
+              <span className="bar"></span>
+            </div>
           </div>
         </nav>
       </div>

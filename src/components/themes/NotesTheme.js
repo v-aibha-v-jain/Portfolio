@@ -3,7 +3,6 @@ import workData from '../../data/work.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronLeft, faChevronRight, faExternalLinkAlt, faCalendarAlt, faBuilding, faTags } from '@fortawesome/free-solid-svg-icons'
 
-// Import images
 import dragImage from '../../assets/images/drag.png';
 import moodyImage from '../../assets/images/moody.png';
 import ttImage from '../../assets/images/tt.png';
@@ -29,7 +28,6 @@ const NotesTheme = () => {
   const touchStartX = useRef(0);
   const touchEndX = useRef(0);
 
-  // Map image names to imported images
   const imageMap = {
     'drag.png': dragImage,
     'moody.png': moodyImage,
@@ -51,28 +49,23 @@ const NotesTheme = () => {
     'va.png': va
   };
 
-  // Process and sort timeline data
   const timelineData = workData.timeline
     .map(item => ({
       ...item,
       bg: item.bg && imageMap[item.bg] ? imageMap[item.bg] : item.bg
     }))
     .sort((a, b) => {
-      // Convert dates to Date objects for comparison
       const dateA = new Date(a.endDate);
       const dateB = new Date(b.endDate);
-      // Sort in descending order (newest first)
       return dateB - dateA;
     });
 
-  // Format date for display
   const formatDate = (dateString) => {
     if (dateString === 'Present') return dateString;
     const date = new Date(dateString);
     return date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
   };
 
-  // Navigate to next page
   const nextPage = () => {
     if (isAnimating || currentIndex >= timelineData.length - 1) return;
     setIsAnimating(true);
@@ -80,7 +73,6 @@ const NotesTheme = () => {
     setTimeout(() => setIsAnimating(false), 600);
   };
 
-  // Navigate to previous page
   const prevPage = () => {
     if (isAnimating || currentIndex <= 0) return;
     setIsAnimating(true);
@@ -88,7 +80,6 @@ const NotesTheme = () => {
     setTimeout(() => setIsAnimating(false), 600);
   };
 
-  // Handle touch events for mobile
   const handleTouchStart = (event) => {
     touchStartX.current = event.touches[0].clientX;
   };
@@ -101,14 +92,13 @@ const NotesTheme = () => {
     
     if (Math.abs(deltaX) > minSwipeDistance) {
       if (deltaX > 0) {
-        nextPage(); // Swipe left = next page
+        nextPage();
       } else {
-        prevPage(); // Swipe right = previous page
+        prevPage();
       }
     }
   };
 
-  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyPress = (event) => {
       if (event.key === 'ArrowLeft') {
@@ -130,14 +120,11 @@ const NotesTheme = () => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Book Background */}
       <div className="book-background">
         <div className="book-spine"></div>
       </div>
 
-      {/* Book Content */}
       <div className={`book-content ${isAnimating ? 'page-turning' : ''}`}>
-        {/* Left Page - Image */}
         <div className="left-page">
           <div className="page-shadow"></div>
           <div className="page-content">
@@ -155,7 +142,6 @@ const NotesTheme = () => {
           </div>
         </div>
 
-        {/* Right Page - Content */}
         <div className="right-page">
           <div className="page-shadow"></div>
           <div className="page-content">
@@ -192,7 +178,6 @@ const NotesTheme = () => {
               <div className="book-links">
                 {currentItem.link.map((linkObj, linkIndex) => {
                   if (linkObj && typeof linkObj === 'object') {
-                    // Map through ALL entries in each link object, not just the first one
                     return Object.entries(linkObj).map(([label, url], entryIndex) => (
                       <a 
                         key={`${linkIndex}-${entryIndex}`}
@@ -216,7 +201,6 @@ const NotesTheme = () => {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
       <button 
         className={`nav-arrow left-arrow ${currentIndex === 0 ? 'disabled' : ''}`}
         onClick={prevPage}
@@ -233,7 +217,6 @@ const NotesTheme = () => {
         <FontAwesomeIcon icon={faChevronRight} />
       </button>
 
-      {/* Page Indicator */}
       <div className="page-indicator">
         <span className="current-page">{currentIndex + 1}</span>
         <span className="separator"> / </span>

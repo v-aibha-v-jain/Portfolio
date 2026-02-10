@@ -3,7 +3,6 @@ import workData from '../../data/work.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt, faCalendarAlt, faBuilding, faTags } from '@fortawesome/free-solid-svg-icons'
 
-// Import images
 import dragImage from '../../assets/images/drag.png';
 import moodyImage from '../../assets/images/moody.png';
 import ttImage from '../../assets/images/tt.png';
@@ -24,7 +23,6 @@ import rpa from "../../assets/images/rpa.png";
 import va from "../../assets/images/va.png";
 
 const NewsletterTheme = () => {
-  // Map image names to imported images
   const imageMap = {
     'drag.png': dragImage,
     'moody.png': moodyImage,
@@ -46,21 +44,17 @@ const NewsletterTheme = () => {
     'va.png': va
   };
 
-  // Process and sort timeline data
   const timelineData = workData.timeline
     .map(item => ({
       ...item,
       bg: item.bg && imageMap[item.bg] ? imageMap[item.bg] : item.bg
     }))
     .sort((a, b) => {
-      // Convert dates to Date objects for comparison
       const dateA = new Date(a.endDate);
       const dateB = new Date(b.endDate);
-      // Sort in descending order (newest first)
       return dateB - dateA;
     });
 
-  // Format date for display
   const formatDate = (dateString) => {
     if (dateString === 'Present') return dateString;
     const date = new Date(dateString);
@@ -69,17 +63,9 @@ const NewsletterTheme = () => {
 
   return (
     <div className="newsletter-theme-container">
-      {/* Header Section */}
-      {/* <div className="newsletter-header">
-        <h1 className="newsletter-title"></h1>
-        <p className="newsletter-subtitle"></p>
-      </div> */}
-
-      {/* Timeline Grid */}
       <div className="timeline-grid">
         {timelineData.map((item, index) => (
           <div key={item.id} className="timeline-card" data-index={index}>
-            {/* Card Image */}
             {item.bg && (
               <div 
                 className="card-image" 
@@ -91,9 +77,7 @@ const NewsletterTheme = () => {
               />
             )}
             
-            {/* Card Content */}
             <div className="card-content">
-              {/* Date Badge */}
               <div className={`date-badge ${item.ongoing ? 'ongoing' : ''}`}>
                 <FontAwesomeIcon icon={faCalendarAlt} className="icon" />
                 <span>
@@ -101,17 +85,14 @@ const NewsletterTheme = () => {
                 </span>
               </div>
 
-              {/* Title and Company */}
               <h3 className="card-title">{item.title}</h3>
               <div className="card-company">
                 <FontAwesomeIcon icon={faBuilding} className="icon" />
                 <span>{item.company}</span>
               </div>
 
-              {/* Description */}
               <p className="card-description">{item.description}</p>
 
-              {/* Tags */}
               {item.tags && item.tags.length > 0 && (
                 <div className="card-tags">
                   <FontAwesomeIcon icon={faTags} className="tags-icon" />
@@ -123,7 +104,6 @@ const NewsletterTheme = () => {
                 </div>
               )}
 
-              {/* Links */}
               {item.link && item.link.length > 0 && (
                 <div className="card-links">
                   {item.link.map((linkObj, linkIndex) => {

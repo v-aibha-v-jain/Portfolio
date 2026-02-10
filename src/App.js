@@ -6,12 +6,13 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import WorkExperience from './components/WorkExperience';
+import Achievements from './components/Achievements';
 import Projects from './components/Projects';
+import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Work from './components/Work';
-// import Testimonials from './components/testimonials';
 
-// Main Portfolio Page Component
 const PortfolioPage = () => {
   return (
     <>
@@ -19,8 +20,10 @@ const PortfolioPage = () => {
       <Hero />
       <About />
       <Skills />
+      <WorkExperience />
+      <Achievements />
       <Projects />
-      {/* <Testimonials /> */}
+      <Certificates />
       <Contact />
     </>
   );

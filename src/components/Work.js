@@ -28,7 +28,6 @@ const Work = () => {
     }
   };
 
-  // Track theme switcher interaction
   const handleThemeChange = (e) => {
     const selectedTheme = e.target.value;
     setCurrentTheme(selectedTheme);
@@ -43,7 +42,6 @@ const Work = () => {
 
   return (
     <div className={`work-page ${currentTheme}-theme`}>
-      {/* Back Button */}
       <Link 
         to="/" 
         className="back-btn"
@@ -70,7 +68,6 @@ const Work = () => {
         Back
       </Link>
 
-      {/* Theme Switcher */}
       <div id="themeSwitcher" style={{ position: 'fixed', top: '25px', right: '30px', zIndex: 201 }}>
         <select
           value={currentTheme}
@@ -95,7 +92,6 @@ const Work = () => {
         </select>
       </div>
 
-      {/* Render Current Theme */}
       {renderTheme()}
     </div>
   );

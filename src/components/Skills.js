@@ -1,24 +1,43 @@
 import React from 'react';
 
 const Skills = () => {
-  const programmingSkills = [
-    { name: 'Web Development', icon: 'fas fa-code', percentage: 95 },
-    { name: 'MERN', icon: 'fab fa-react', percentage: 80 },
-    { name: 'PHP', icon: 'fab fa-php', percentage: 90 },
-    { name: 'Machine Learning', icon: 'fas fa-robot', percentage: 60 },
-    { name: 'Python', icon: 'fab fa-python', percentage: 75 },
-    { name: 'DBMS', icon: 'fas fa-database', percentage: 80 },
-    { name: 'Automation', icon: 'fas fa-cogs', percentage: 70 },
-    { name: 'C/C++', icon: 'fas fa-code-branch', percentage: 60 },
-    { name: 'Java', icon: 'fab fa-java', percentage: 50 }
+  const languages = [
+    { name: 'Java', icon: 'fab fa-java' },
+    { name: 'Python', icon: 'fab fa-python' },
+    { name: 'JavaScript', icon: 'fab fa-js-square' },
+    { name: 'PHP', icon: 'fab fa-php' }
   ];
 
-  const otherSkills = [
-    { name: 'Git', icon: 'fab fa-git-alt', percentage: 90 },
-    { name: 'Cloud Computing', icon: 'fas fa-cloud', percentage: 75 },
-    { name: 'UI/UX', icon: 'fas fa-mobile-alt', percentage: 85 },
-    { name: 'Figma', icon: 'fas fa-paint-brush', percentage: 85 },
-    { name: 'Linux', icon: 'fab fa-linux', percentage: 65 }
+  const frameworks = [
+    { name: 'Node', icon: 'fab fa-node-js' },
+    { name: 'React', icon: 'fab fa-react' },
+    { name: 'Express', icon: 'fas fa-server' },
+    { name: 'Angular', icon: 'fab fa-angular' }
+  ];
+
+  const databases = [
+    { name: 'SQL', icon: 'fas fa-database' },
+    { name: 'PostgreSQL', icon: 'fas fa-database' },
+    { name: 'MongoDB', icon: 'fas fa-leaf' },
+    { name: 'FireStore', icon: 'fas fa-fire' }
+  ];
+
+  const cloudTools = [
+    { name: 'AWS', icon: 'fab fa-aws' },
+    { name: 'Firebase', icon: 'fas fa-fire-alt' },
+    { name: 'Vercel', icon: 'fas fa-rocket' },
+    { name: 'Hostinger', icon: 'fas fa-globe' },
+    { name: 'Git', icon: 'fab fa-git-alt' },
+    { name: 'GitHub', icon: 'fab fa-github' },
+    { name: 'Docker', icon: 'fab fa-docker' }
+  ];
+
+  const automationAI = [
+    { name: 'Selenium', icon: 'fas fa-cogs' },
+    { name: 'BeautifulSoup', icon: 'fas fa-spider' },
+    { name: 'UiPath', icon: 'fas fa-robot' },
+    { name: 'Blue Prism', icon: 'fas fa-robot' },
+    { name: 'LLM', icon: 'fas fa-brain' }
   ];
 
   return (
@@ -30,37 +49,74 @@ const Skills = () => {
         </div>
         <div className="skills-content">
           <div className="skill-category">
-            <h3>Programming Skills</h3>
+            <h3>Languages & Frameworks</h3>
             <div className="skills-grid">
-              {programmingSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-icon">
-                    <i className={skill.icon}></i>
+              <div className="skills-row">
+                <div className="skills-subsection">
+                  <h4>Languages</h4>
+                  <div className="skills-list">
+                    {languages.map((skill, index) => (
+                      <div key={index} className="skill-tag">
+                        <i className={skill.icon}></i>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
                   </div>
-                  <h4>{skill.name}</h4>
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: `${skill.percentage}%` }}></div>
-                  </div>
-                  <span>{skill.percentage}%</span>
                 </div>
-              ))}
+                <div className="skills-subsection">
+                  <h4>Frameworks</h4>
+                  <div className="skills-list">
+                    {frameworks.map((skill, index) => (
+                      <div key={index} className="skill-tag">
+                        <i className={skill.icon}></i>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
           <div className="skill-category">
-            <h3>Other Skills</h3>
+            <h3>Databases</h3>
             <div className="skills-grid">
-              {otherSkills.map((skill, index) => (
-                <div key={index} className="skill-item">
-                  <div className="skill-icon">
+              <div className="skills-list">
+                {databases.map((skill, index) => (
+                  <div key={index} className="skill-tag">
                     <i className={skill.icon}></i>
+                    <span>{skill.name}</span>
                   </div>
-                  <h4>{skill.name}</h4>
-                  <div className="progress-bar">
-                    <div className="progress" style={{ width: `${skill.percentage}%` }}></div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>Cloud & Tools</h3>
+            <div className="skills-grid">
+              <div className="skills-list">
+                {cloudTools.map((skill, index) => (
+                  <div key={index} className="skill-tag">
+                    <i className={skill.icon}></i>
+                    <span>{skill.name}</span>
                   </div>
-                  <span>{skill.percentage}%</span>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="skill-category">
+            <h3>Automation & AI</h3>
+            <div className="skills-grid">
+              <div className="skills-list">
+                {automationAI.map((skill, index) => (
+                  <div key={index} className="skill-tag">
+                    <i className={skill.icon}></i>
+                    <span>{skill.name}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>

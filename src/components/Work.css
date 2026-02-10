@@ -1,15 +1,8 @@
-/* Prevent pull-to-refresh and other mobile browser behaviors
-body {
-    overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
-}
-
 .work-page {
     overscroll-behavior: none;
     touch-action: none;
-} */
+}
 
-/* Work Page Styles */
 .work-page {
     /* overflow: hidden; */
     height: 100vh;
@@ -27,7 +20,6 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Newsletter theme specific styles */
 .work-page.newsletter-theme .timeline-container {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
@@ -68,7 +60,6 @@ body {
     background: #1976D2;
 }
 
-/* Professional Newsletter Theme - Grid Layout */
 .newsletter-theme-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -301,7 +292,6 @@ body {
     font-size: 0.9rem;
 }
 
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
     .newsletter-theme-container {
         padding: 1rem;
@@ -353,7 +343,6 @@ body {
     text-align: left;
 }
 
-/* Book Theme Styles */
 .book-container {
     display: flex;
     align-items: center;
@@ -467,8 +456,6 @@ body {
 
 .book-image {
     width: 100%;
-    max-width: 100%;
-    /* max-height: 80%; */
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     border: 3px solid #D2B48C;
@@ -700,7 +687,6 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Date badge for book theme */
 .book-container .date-badge {
     display: inline-flex;
     align-items: center;
@@ -725,7 +711,6 @@ body {
     font-size: 0.7rem;
 }
 
-/* Mobile Responsiveness for Book Theme */
 @media (max-width: 768px) {
     .book-container {
         padding: 1rem;
@@ -738,12 +723,10 @@ body {
         height: 600px;
     }
     
-    /* Hide left page on mobile */
     .left-page {
         display: none;
     }
     
-    /* Make right page full width */
     .right-page {
         width: 100%;
         border-radius: 10px;
@@ -872,7 +855,6 @@ body {
     }
 }
 
-/* Sky Background */
 .sky-container {
     position: fixed;
     top: 0;
@@ -979,7 +961,6 @@ body {
     }
 }
 
-/* Timeline Container */
 .timeline-container {
     position: relative;
     height: 100vh;
@@ -987,7 +968,6 @@ body {
     overflow: hidden;
 }
 
-/* Activity Slides */
 .activity-slide {
     position: absolute;
     top: 0;
@@ -1090,7 +1070,6 @@ h2 {
     transform: translateY(-3px);
 }
 
-/* Navigation */
 .timeline-nav {
     position: fixed;
     right: 30px;
@@ -1132,7 +1111,6 @@ h2 {
     z-index: 1000;
 }
 
-/* Notes theme specific tooltip styling */
 .work-page.note-theme .nav-dot:hover::after {
     background: #8B4513;
     color: #FFF8DC;
@@ -1140,7 +1118,6 @@ h2 {
     box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
 }
 
-/* Newsletter theme specific tooltip styling */
 .work-page.newsletter-theme .nav-dot:hover::after {
     background: #2196F3;
     color: #fff;
@@ -1148,7 +1125,6 @@ h2 {
     box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
 }
 
-/* Scroll Indicator */
 .scroll-indicator {
     position: fixed;
     bottom: 30px;
@@ -1341,7 +1317,6 @@ select:focus {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
     .activity-card {
         padding: 30px;
@@ -1361,14 +1336,12 @@ select:focus {
     }
 }
 
-/* Progress Bar */
 .progress-bar {
     height: 5px;
     z-index: 100;
     transition: width 0.3s ease;
 }
 
-/* Newsletter Theme Styles */
 body.newsletter-theme {
     background: #fff !important;
     color: #222 !important;

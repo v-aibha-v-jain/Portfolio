@@ -7,7 +7,6 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
-// Import images
 import dragImage from "../../assets/images/drag.png";
 import moodyImage from "../../assets/images/moody.png";
 import ttImage from "../../assets/images/tt.png";
@@ -34,7 +33,6 @@ const DayNightTheme = () => {
   const touchEndY = useRef(0);
   const scrollCooldown = 1000;
 
-  // Map image names to imported images
   const imageMap = {
     "drag.png": dragImage,
     "moody.png": moodyImage,
@@ -55,27 +53,23 @@ const DayNightTheme = () => {
     "va.png": va,
   };
 
-  // Process timeline data from JSON with image mapping
   const timelineData = workData.timeline
     .map((item) => ({
       ...item,
       bg: item.bg && imageMap[item.bg] ? imageMap[item.bg] : item.bg,
     }))
     .sort((a, b) => {
-      // Convert dates to Date objects for comparison
       const dateA = new Date(a.endDate);
       const dateB = new Date(b.endDate);
-      // Sort in descending order (newest first)
       return dateB - dateA;
     });
-  // Format date for display
+
   const formatDate = (dateString) => {
     if (dateString === "Present") return dateString;
     const date = new Date(dateString);
     return date.toLocaleDateString("en-US", { month: "long", year: "numeric" });
   };
 
-  // Handle scroll events
   const handleScroll = (event) => {
     const now = Date.now();
     if (isScrolling || now - lastScrollTime.current < scrollCooldown) return;
@@ -95,9 +89,7 @@ const DayNightTheme = () => {
     }, 800);
   };
 
-  // Handle touch events for mobile
   const handleTouchStart = (event) => {
-    // Check if touch target is an interactive element that should not be prevented
     const target = event.target;
     const isInteractiveElement =
       target.tagName === "SELECT" ||
@@ -112,14 +104,12 @@ const DayNightTheme = () => {
 
     touchStartY.current = event.touches[0].clientY;
 
-    // Only prevent default if not touching interactive elements
     if (!isInteractiveElement) {
       event.preventDefault();
     }
   };
 
   const handleTouchMove = (event) => {
-    // Check if touch target is an interactive element
     const target = event.target;
     const isInteractiveElement =
       target.tagName === "SELECT" ||
@@ -132,14 +122,12 @@ const DayNightTheme = () => {
       target.closest("a") ||
       target.closest(".nav-dot");
 
-    // Only prevent default scroll behavior if not interacting with form elements
     if (!isInteractiveElement) {
       event.preventDefault();
     }
   };
 
   const handleTouchEnd = (event) => {
-    // Check if touch target is an interactive element
     const target = event.target;
     const isInteractiveElement =
       target.tagName === "SELECT" ||
@@ -158,14 +146,14 @@ const DayNightTheme = () => {
     if (isScrolling || now - lastScrollTime.current < scrollCooldown) return;
 
     const deltaY = touchStartY.current - touchEndY.current;
-    const minSwipeDistance = 50; // Minimum distance for a swipe
+    const minSwipeDistance = 50;
 
     if (Math.abs(deltaY) > minSwipeDistance && !isInteractiveElement) {
-      event.preventDefault(); // Prevent default behavior only for navigation swipes
+      event.preventDefault();
       setIsScrolling(true);
       lastScrollTime.current = now;
 
-      const direction = deltaY > 0 ? 1 : -1; // Swipe up = next, swipe down = previous
+      const direction = deltaY > 0 ? 1 : -1;
       let newIndex = currentIndex + direction;
 
       if (newIndex >= 0 && newIndex < timelineData.length) {
@@ -178,14 +166,12 @@ const DayNightTheme = () => {
     }
   };
 
-  // Go to specific slide
   const goToSlide = (index) => {
     if (index < 0) index = 0;
     if (index >= timelineData.length) index = timelineData.length - 1;
     setCurrentIndex(index);
   };
 
-  // Create stars for night sky
   const createStars = () => {
     const stars = [];
     for (let i = 0; i < 100; i++) {
@@ -206,12 +192,10 @@ const DayNightTheme = () => {
     return stars;
   };
 
-  // Update day/night cycle based on index
   const updateDayNightCycle = () => {
     return currentIndex % 2 === 0 ? "day-sky" : "night-sky";
   };
 
-  // Event listeners
   useEffect(() => {
     window.addEventListener("wheel", handleScroll);
     window.addEventListener("touchstart", handleTouchStart, { passive: false });
@@ -228,7 +212,6 @@ const DayNightTheme = () => {
 
   return (
     <>
-      {/* Sky Background */}
       <div
         className={`sky-container ${updateDayNightCycle()}`}
         id="skyContainer"
@@ -273,7 +256,6 @@ const DayNightTheme = () => {
         ></div>
       </div>
 
-      {/* Progress Bar */}
       <div
         className="progress-bar"
         style={{
@@ -281,7 +263,6 @@ const DayNightTheme = () => {
         }}
       />
 
-      {/* Timeline Container */}
       <div className="timeline-container">
         {timelineData.map((item, index) => (
           <div
@@ -335,7 +316,6 @@ const DayNightTheme = () => {
         ))}
       </div>
 
-      {/* Timeline Navigation */}
       <div className="timeline-nav">
         {timelineData.map((item, index) => (
           <div
@@ -347,7 +327,6 @@ const DayNightTheme = () => {
         ))}
       </div>
 
-      {/* Scroll Indicator */}
       <div className="scroll-indicator">
         <div className="scroll-arrows">
           <FontAwesomeIcon icon={faChevronUp} />
