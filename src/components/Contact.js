@@ -179,7 +179,7 @@ const Contact = () => {
           <div className="footer-content">
             <div className="footer-logo">
               <h2>Vaibhav<span>Jain</span></h2>
-              <p>Full Stack Developer</p>
+              <p>Software Developer</p>
             </div>
             <div className="footer-links">
               <h3>Quick Links</h3>

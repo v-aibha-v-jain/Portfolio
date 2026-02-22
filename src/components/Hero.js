@@ -28,8 +28,8 @@ const Hero = () => {
       <div className="container">
         <div className="hero-content">
           <h1>Hi, I'm <span>Vaibhav Jain</span></h1>
-          <h2>Full Stack Developer</h2>
-          <p>A Software Developer with experience in full-stack development, cloud technologies (AWS, Firebase), and machine learning. Contributed to more than 10 full-stack and AI projects, delivering scalable applications and collaborating effectively within team environments.</p>
+          <h2>Software Developer</h2>
+          <p>Software Engineer and Open source contributor with 2 years of experience in the startup and freelance worlds. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes.</p>
           <div className="hero-buttons">
             <a href="/#contact" className="btn btn-secondary" onClick={handleContactClick}>Contact Me</a>
           </div>
