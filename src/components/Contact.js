@@ -40,7 +40,15 @@ const Contact = () => {
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
-      setSubmitMessage('Error sending message. Please try again.');
+      
+      // Detect if Firebase is blocked by ad blocker
+      if (error.code === 'unavailable' || 
+          error.message?.includes('Failed to fetch') ||
+          error.message?.includes('blocked')) {
+        setSubmitMessage('⚠️ Connection blocked! Please disable your ad blocker or whitelist this site, then try again.');
+      } else {
+        setSubmitMessage('Error sending message. Please try again.');
+      }
     } finally {
       setIsSubmitting(false);
     }
@@ -61,7 +69,15 @@ const Contact = () => {
       alert('Successfully subscribed to newsletter!');
     } catch (error) {
       console.error('Error subscribing to newsletter:', error);
-      alert('Error subscribing. Please try again.');
+      
+      // Detect if Firebase is blocked by ad blocker
+      if (error.code === 'unavailable' || 
+          error.message?.includes('Failed to fetch') ||
+          error.message?.includes('blocked')) {
+        alert('⚠️ Connection blocked! Please disable your ad blocker or whitelist this site, then try again.');
+      } else {
+        alert('Error subscribing. Please try again.');
+      }
     }
   };
 
@@ -168,6 +184,20 @@ const Contact = () => {
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
                 {submitMessage && <p className="submit-message">{submitMessage}</p>}
+                {submitMessage && submitMessage.includes('blocked') && (
+                  <div style={{
+                    marginTop: '15px',
+                    padding: '12px',
+                    background: '#fff3cd',
+                    border: '1px solid #ffc107',
+                    borderRadius: '5px',
+                    fontSize: '14px',
+                    color: '#856404'
+                  }}>
+                    <strong>Tip:</strong> If you're using an ad blocker (uBlock Origin, AdBlock, etc.), 
+                    please whitelist this site or disable it temporarily to submit the form.
+                  </div>
+                )}
               </form>
             </div>
           </div>
