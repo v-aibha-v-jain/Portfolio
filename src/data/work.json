@@ -2,6 +2,19 @@
   "timeline": [
     {
       "id": 1,
+      "title": "SDE",
+      "description": "Working as a SDE, developing and maintaining the company's CMS and SSR projects. Making use of TypeScript and other frameworks to build scalable and efficient web applications. Collaborating with cross-functional teams to deliver high-quality products and enhance user experience.",
+      "company": "Updot Solutions LLP",
+      "startDate": "2026-2-01",
+      "endDate": "2026-2-01",
+      "ongoing": true,
+      "tags": ["Full-time","TypeScript","CMS","SSR","Full Stack","UX"],
+      "link": [],
+      "bg": "",
+      "type": "Exp"
+    },
+    {
+      "id": 1,
       "title": "VA-task-executor",
       "description": "Desktop voice assistant that listens and executes commands (open app/file/folder/url, read files, etc.)",
       "company": "Personal Project",

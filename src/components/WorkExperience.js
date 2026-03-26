@@ -2,7 +2,7 @@ import React from 'react';
 import workData from '../data/work.json';
 
 const WorkExperience = () => {
-    const targetCompanies = ['NEURICORN SYNDICATE', 'Duzo Kriton PVT LTD'];
+    const targetCompanies = ['NEURICORN SYNDICATE', 'Duzo Kriton PVT LTD', 'Updot Solutions LLP'];
 
     const formatDate = (dateStr) => {
         if (!dateStr) return '';
