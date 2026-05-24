@@ -52,7 +52,7 @@ const Certificates = () => {
             title: 'The Joy of Computing using Python',
             issuer: 'NPTEL',
             credentialId: 'NPTEL23CS108S33231421',
-            verifyUrl: '#',
+            verifyUrl: 'https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL23CS108S3323142120446101',
             icon: 'fab fa-python',
             description: 'Python programming certification from National Programme on Technology Enhanced Learning'
         }

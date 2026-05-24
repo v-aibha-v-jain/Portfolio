@@ -160,7 +160,7 @@ const Projects = () => {
                 <img src={project.image} alt={project.title} />
                 <div className="project-overlay">
                   <div className="project-info">
-                    <h4>{project.title}</h4>
+                    <h3>{project.title}</h3>
                     <p>{project.description}</p>
                     <div className="project-links">
                       {project.links.map((link, index) => (
