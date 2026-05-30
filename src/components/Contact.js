@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { scrollToElement } from '../utils/scroll';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -35,16 +36,16 @@ const Contact = () => {
         timestamp: new Date(),
         type: 'contact'
       });
-      
+
       setSubmitMessage('Message sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error sending message:', error);
-      
+
       // Detect if Firebase is blocked by ad blocker
-      if (error.code === 'unavailable' || 
-          error.message?.includes('Failed to fetch') ||
-          error.message?.includes('blocked')) {
+      if (error.code === 'unavailable' ||
+        error.message?.includes('Failed to fetch') ||
+        error.message?.includes('blocked')) {
         setSubmitMessage('⚠️ Connection blocked! Please disable your ad blocker or whitelist this site, then try again.');
       } else {
         setSubmitMessage('Error sending message. Please try again.');
@@ -64,16 +65,16 @@ const Contact = () => {
         timestamp: new Date(),
         type: 'newsletter'
       });
-      
+
       setNewsletterEmail('');
       alert('Successfully subscribed to newsletter!');
     } catch (error) {
       console.error('Error subscribing to newsletter:', error);
-      
+
       // Detect if Firebase is blocked by ad blocker
-      if (error.code === 'unavailable' || 
-          error.message?.includes('Failed to fetch') ||
-          error.message?.includes('blocked')) {
+      if (error.code === 'unavailable' ||
+        error.message?.includes('Failed to fetch') ||
+        error.message?.includes('blocked')) {
         alert('⚠️ Connection blocked! Please disable your ad blocker or whitelist this site, then try again.');
       } else {
         alert('Error subscribing. Please try again.');
@@ -82,8 +83,7 @@ const Contact = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    const el = document.getElementById(sectionId);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
   };
 
   const handleAnchorClick = (e, sectionId) => {
@@ -142,41 +142,41 @@ const Contact = () => {
               <h3>Send Me a Message</h3>
               <form onSubmit={handleContactSubmit}>
                 <div className="form-group">
-                  <input 
-                    type="text" 
-                    name="name" 
+                  <input
+                    type="text"
+                    name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    placeholder="Your Name" 
-                    required 
+                    placeholder="Your Name"
+                    required
                   />
                 </div>
                 <div className="form-group">
-                  <input 
-                    type="email" 
-                    name="email" 
+                  <input
+                    type="email"
+                    name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="Your Email" 
-                    required 
+                    placeholder="Your Email"
+                    required
                   />
                 </div>
                 <div className="form-group">
-                  <input 
-                    type="text" 
-                    name="subject" 
+                  <input
+                    type="text"
+                    name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    placeholder="Subject" 
-                    required 
+                    placeholder="Subject"
+                    required
                   />
                 </div>
                 <div className="form-group">
-                  <textarea 
-                    name="message" 
+                  <textarea
+                    name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Your Message" 
+                    placeholder="Your Message"
                     required
                   ></textarea>
                 </div>
@@ -194,7 +194,7 @@ const Contact = () => {
                     fontSize: '14px',
                     color: '#856404'
                   }}>
-                    <strong>Tip:</strong> If you're using an ad blocker (uBlock Origin, AdBlock, etc.), 
+                    <strong>Tip:</strong> If you're using an ad blocker (uBlock Origin, AdBlock, etc.),
                     please whitelist this site or disable it temporarily to submit the form.
                   </div>
                 )}
@@ -225,12 +225,12 @@ const Contact = () => {
               <h3>Newsletter</h3>
               <p>Subscribe to my newsletter for updates</p>
               <form onSubmit={handleNewsletterSubmit} className="newsletter-form">
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   value={newsletterEmail}
                   onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="Your Email" 
-                  required 
+                  placeholder="Your Email"
+                  required
                 />
                 <button type="submit"><i className="fas fa-paper-plane"></i></button>
               </form>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { scrollToElement } from '../utils/scroll';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -31,16 +32,10 @@ const Header = () => {
     if (window.location.hash === '#/work' || window.location.pathname.includes('/work')) {
       window.location.hash = '#/';
       setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+        scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
       }, 100);
     } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
     }
     setIsMenuOpen(false);
   };

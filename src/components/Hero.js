@@ -1,16 +1,14 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import profileImage from '../assets/images/profile.jpeg';
+import { scrollToElement } from '../utils/scroll';
 
 const Hero = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
   };
 
   const handleContactClick = (e) => {
