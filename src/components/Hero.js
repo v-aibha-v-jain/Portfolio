@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="hero-content">
           <h1>Hi, I'm <span>Vaibhav Jain</span></h1>
           <h2>Software Developer</h2>
-          <p>Software Engineer and Open source contributor with 2 years of experience in the startup and freelance worlds. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes.</p>
+          <p>Software Engineer and Open-Source Contributor experienced in startup and freelance ecosystems. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes.</p>
           <div className="hero-buttons">
             <a href="/#contact" className="btn btn-secondary" onClick={handleContactClick}>Contact Me</a>
           </div>
