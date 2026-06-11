@@ -113,14 +113,14 @@ const Contact = () => {
                   <i className="fas fa-map-marker-alt"></i>
                   <div>
                     <h4>Location</h4>
-                    <p>Bangalore, Karnataka, India</p>
+                    <span>Bangalore, Karnataka, India</span >
                   </div>
                 </div>
                 <div className="contact-item">
                   <i className="fas fa-envelope"></i>
                   <div>
                     <h4>Email</h4>
-                    <p>vaibhavjain.vjv@gmail.com</p>
+                    <a href="mailto:vaibhavjain.vjv@gmail.com">vaibhavjain.vjv@gmail.com</a>
                   </div>
                 </div>
                 <div className="contact-item">

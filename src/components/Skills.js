@@ -9,10 +9,18 @@ const Skills = () => {
   ];
 
   const frameworks = [
-    { name: 'Node', icon: 'fab fa-node-js' },
     { name: 'React', icon: 'fab fa-react' },
+    { name: 'Angular', icon: 'fab fa-angular' },
+    { name: 'Astro', icon: 'fas fa-rocket' },
+    { name: 'Nuxt', icon: 'fas fa-layer-group' },
+    { name: 'Vue', icon: 'fab fa-vuejs' },
+  ];
+
+  const Bframeworks = [
     { name: 'Express', icon: 'fas fa-server' },
-    { name: 'Angular', icon: 'fab fa-angular' }
+    { name: 'Spring Boot', icon: 'fas fa-leaf' },
+    { name: 'Payload CMS', icon: 'fas fa-cube' },
+
   ];
 
   const databases = [
@@ -37,7 +45,9 @@ const Skills = () => {
     { name: 'BeautifulSoup', icon: 'fas fa-spider' },
     { name: 'UiPath', icon: 'fas fa-robot' },
     { name: 'Blue Prism', icon: 'fas fa-robot' },
-    { name: 'LLM', icon: 'fas fa-brain' }
+    { name: 'LLM', icon: 'fas fa-brain' },
+    { name: 'RAG', icon: 'fas fa-search' },
+    
   ];
 
   return (
@@ -67,6 +77,17 @@ const Skills = () => {
                   <h4>Frameworks</h4>
                   <div className="skills-list">
                     {frameworks.map((skill, index) => (
+                      <div key={index} className="skill-tag">
+                        <i className={skill.icon}></i>
+                        <span>{skill.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="skills-subsection">
+                  <h4>Backend Frameworks</h4>
+                  <div className="skills-list">
+                    {Bframeworks.map((skill, index) => (
                       <div key={index} className="skill-tag">
                         <i className={skill.icon}></i>
                         <span>{skill.name}</span>

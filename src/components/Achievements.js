@@ -2,15 +2,18 @@ import React from 'react';
 import workData from '../data/work.json';
 
 const Achievements = () => {
-    const freelanceItem = workData.timeline.find((item) => item.company === 'Clayarts');
     const draggridItem = workData.timeline.find((item) => item.title === 'Drag_drop_swipe');
 
     const achievements = [
         {
-            title: 'Freelance - Clayarts',
-            description: freelanceItem?.description || 'Delivered a custom website and interactive personalization experience for a client brand.',
-            tags: freelanceItem?.tags || ['Freelance', 'Web Development'],
-            link: freelanceItem?.link?.[0]?.Website
+            title: 'Kodikon 3.0 | National Level Hackathon, PES University',
+            description: 'Participated in a 24-hour national-level hackathon; ranked in the top 40 teams out of hundreds of participants.',
+            tags: ['Hackathon', 'AI/ML', 'Competition']
+        },
+        {
+            title: 'Hack-A-City 2.0 | City Engineering College, Bangalore',
+            description: 'Competed in an AI/ML-focused hackathon; achieving a top 10 finish among 200+ teams across Karnataka.',
+            tags: ['Hackathon', 'AI/ML', 'Competition']
         },
         {
             title: 'Publication - draggrid npm module',
