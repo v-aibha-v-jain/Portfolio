@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase';
-import { useNavigate, useLocation } from 'react-router-dom';
-import { scrollToElement } from '../utils/scroll';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,8 +12,6 @@ const Contact = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-  const navigate = useNavigate();
-  const location = useLocation();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -81,12 +77,6 @@ const Contact = () => {
       }
     }
   };
-
-  const scrollToSection = (sectionId) => {
-    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
-  };
-
-
 
   return (
     <>
