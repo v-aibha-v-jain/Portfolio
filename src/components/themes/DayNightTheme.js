@@ -7,23 +7,23 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 
-import dragImage from "../../assets/images/drag.png";
-import moodyImage from "../../assets/images/moody.png";
-import ttImage from "../../assets/images/tt.png";
-import bubImage from "../../assets/images/bub.png";
-import isonImage from "../../assets/images/ison.png";
-import captImage from "../../assets/images/capt.png";
-import clayartsImage from "../../assets/images/clayarts.png";
-import duzoImage from "../../assets/images/duzo.png";
-import aicteAiImage from "../../assets/images/aicte-ai.png";
-import sihImage from "../../assets/images/sih-23.png";
-import email from "../../assets/images/email.png";
-import task from "../../assets/images/task.png";
-import cli from "../../assets/images/cli.png";
-import ddsa from "../../assets/images/ddsa.png";
-import goto from "../../assets/images/goto.png";
-import rpa from "../../assets/images/rpa.png";
-import va from "../../assets/images/va.png";
+import dragImage from "../../assets/images/drag.webp";
+import moodyImage from "../../assets/images/moody.webp";
+import ttImage from "../../assets/images/tt.webp";
+import bubImage from "../../assets/images/bub.webp";
+import isonImage from "../../assets/images/ison.webp";
+import captImage from "../../assets/images/capt.webp";
+import clayartsImage from "../../assets/images/clayarts.webp";
+import duzoImage from "../../assets/images/duzo.webp";
+import aicteAiImage from "../../assets/images/aicte-ai.webp";
+import sihImage from "../../assets/images/sih-23.webp";
+import email from "../../assets/images/email.webp";
+import task from "../../assets/images/task.webp";
+import cli from "../../assets/images/cli.webp";
+import ddsa from "../../assets/images/ddsa.webp";
+import goto from "../../assets/images/goto.webp";
+import rpa from "../../assets/images/rpa.webp";
+import va from "../../assets/images/va.webp";
 
 const DayNightTheme = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -34,23 +34,23 @@ const DayNightTheme = () => {
   const scrollCooldown = 1000;
 
   const imageMap = {
-    "drag.png": dragImage,
-    "moody.png": moodyImage,
-    "tt.png": ttImage,
-    "bub.png": bubImage,
-    "ison.png": isonImage,
-    "capt.png": captImage,
-    "clayarts.png": clayartsImage,
-    "duzo.png": duzoImage,
-    "aicte-ai.png": aicteAiImage,
-    "sih-23.png": sihImage,
-    "email.png": email,
-    "task.png": task,
-    "cli.png": cli,
-    "ddsa.png": ddsa,
-    "goto.png": goto,
-    "rpa.png": rpa,
-    "va.png": va,
+    "drag.webp": dragImage,
+    "moody.webp": moodyImage,
+    "tt.webp": ttImage,
+    "bub.webp": bubImage,
+    "ison.webp": isonImage,
+    "capt.webp": captImage,
+    "clayarts.webp": clayartsImage,
+    "duzo.webp": duzoImage,
+    "aicte-ai.webp": aicteAiImage,
+    "sih-23.webp": sihImage,
+    "email.webp": email,
+    "task.webp": task,
+    "cli.webp": cli,
+    "ddsa.webp": ddsa,
+    "goto.webp": goto,
+    "rpa.webp": rpa,
+    "va.webp": va,
   };
 
   const timelineData = workData.timeline

@@ -27,6 +27,13 @@
   opacity: 1;
 }
 
+/* Hide custom cursor on mobile, tablets (iPad) and touch devices */
+@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+  .custom-cursor, .custom-cursor-tail {
+    display: none !important;
+  }
+}
+
 @media (pointer: fine) {
   *, *::before, *::after {
     cursor: none !important;

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import dp from "../assets/images/dsa.png"
+import dp from "../assets/images/dsa.webp"
 
 const Testimonials = () => {
     const [currentSlide, setCurrentSlide] = useState(0);

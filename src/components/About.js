@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import aboutImage from '../assets/images/about.png';
+import aboutImage from '../assets/images/about.webp';
 import reactGA from 'react-ga4';
 
 const About = () => {

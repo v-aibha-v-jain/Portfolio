@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import profileImage from '../assets/images/profile.jpeg';
+import profileImage from '../assets/images/profile.webp';
 import { scrollToElement } from '../utils/scroll';
 
 const Hero = () => {

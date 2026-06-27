@@ -1,14 +1,14 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import gotoImage from '../assets/repos/goto.png';
-import dsaImage from '../assets/repos/dsa.png';
-import cliImage from '../assets/repos/cli.png';
-import vaImage from '../assets/repos/va.png';
-import agentImage from '../assets/repos/agent.png';
-import ddsImage from '../assets/repos/dds.png';
-import traffic from '../assets/repos/traffic.png';
-import tt from '../assets/repos/tt.png';
-import onebox from '../assets/repos/onebox.png';
-import tracker from '../assets/repos/tracker.png';
+import gotoImage from '../assets/repos/goto.webp';
+import dsaImage from '../assets/repos/dsa.webp';
+import cliImage from '../assets/repos/cli.webp';
+import vaImage from '../assets/repos/va.webp';
+import agentImage from '../assets/repos/agent.webp';
+import ddsImage from '../assets/repos/dds.webp';
+import traffic from '../assets/repos/traffic.webp';
+import tt from '../assets/repos/tt.webp';
+import onebox from '../assets/repos/onebox.webp';
+import tracker from '../assets/repos/tracker.webp';
 
 const projects = [
   {

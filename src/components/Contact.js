@@ -86,15 +86,7 @@ const Contact = () => {
     scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
   };
 
-  const handleAnchorClick = (e, sectionId) => {
-    e.preventDefault();
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => scrollToSection(sectionId), 150);
-    } else {
-      scrollToSection(sectionId);
-    }
-  };
+
 
   return (
     <>
