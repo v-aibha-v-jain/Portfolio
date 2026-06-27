@@ -1,0 +1,34 @@
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  opacity: 1;
+}
+
+.custom-cursor-tail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #ffffff;
+  pointer-events: none;
+  z-index: 99998;
+  mix-blend-mode: difference;
+  opacity: 1;
+}
+
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}

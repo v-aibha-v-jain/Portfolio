@@ -13,6 +13,7 @@ import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import Work from './components/Work';
+import CustomCursor from './components/CustomCursor';
 
 const PortfolioPage = () => {
   return (
@@ -67,6 +68,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <CustomCursor />
         <Routes>
           <Route path="/" element={<PortfolioPage />} />
           <Route path="/work" element={<Work />} />
