@@ -211,16 +211,6 @@ const Contact = () => {
               <h2>Vaibhav<span>Jain</span></h2>
               <p>Software Developer</p>
             </div>
-            <div className="footer-links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="#home" onClick={(e) => handleAnchorClick(e, 'home')}>Home</a></li>
-                <li><a href="#about" onClick={(e) => handleAnchorClick(e, 'about')}>About</a></li>
-                <li><a href="#skills" onClick={(e) => handleAnchorClick(e, 'skills')}>Skills</a></li>
-                <li><a href="#projects" onClick={(e) => handleAnchorClick(e, 'projects')}>Projects</a></li>
-                <li><a href="#contact" onClick={(e) => handleAnchorClick(e, 'contact')}>Contact</a></li>
-              </ul>
-            </div>
             <div className="footer-newsletter">
               <h3>Newsletter</h3>
               <p>Subscribe to my newsletter for updates</p>

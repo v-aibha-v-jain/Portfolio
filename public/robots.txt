@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vaibhav-jain.me/sitemap.txt
+Sitemap: https://vaibhav-jain.me/sitemap.xml
