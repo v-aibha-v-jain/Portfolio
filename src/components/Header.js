@@ -29,14 +29,7 @@ const Header = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    if (window.location.hash === '#/work' || window.location.pathname.includes('/work')) {
-      window.location.hash = '#/';
-      setTimeout(() => {
-        scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
-      }, 100);
-    } else {
-      scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
-    }
+    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
     setIsMenuOpen(false);
   };
 
