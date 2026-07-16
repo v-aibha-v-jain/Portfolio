@@ -1,0 +1,224 @@
+{
+    "basics": {
+        "name": "Vaibhav Jain",
+        "total_exp_years": "1.5 Years",
+        "gender": "Male",
+        "location": {
+            "city": "Bengaluru",
+            "country": "India"
+        },
+        "phone_number": "+91-9164225221",
+        "email": "vaibhavjain.vjv@gmail.com",
+        "about": "AI Full-Stack Engineer with a track record of building optimized applications and production-ready AI systems. Experienced in shipping scalable apps, launching open-source packages, and deploying LLM/RAG pipelines. Expert at combining modern frontend frameworks with robust backend architectures to drive measurable business results."
+    },
+    "experience": [
+        {
+            "company": "Updot Solutions LLP",
+            "role": "Software Development Engineer (Contract)",
+            "duration": "Mar 2026 - May 2026",
+            "responsibilities": [
+                "Engineered content-driven websites using Astro and Nuxt with Island Architecture, achieving 40% faster page load times and improved Core Web Vitals scores.",
+                "Executed Payload CMS integration with Node.js, cutting client content update time by 60% while maintaining full Vue/Nuxt frontend performance."
+            ]
+        },
+        {
+            "company": "NEURICORN SYNDICATE",
+            "role": "AI Consultant (Part-Time)",
+            "duration": "Oct 2024 - Mar 2025",
+            "responsibilities": [
+                "Assisted the team with setting up machine learning pipelines.",
+                "Guided and mentored interns on working effectively with ML models.",
+                "Handled technical communication, project planning, and client presentations."
+            ]
+        },
+        {
+            "company": "Duzo Kriton PVT LTD",
+            "role": "Full Stack Developer (Full Time Intern)",
+            "duration": "Oct 2024 - Mar 2025",
+            "responsibilities": [
+                "Maintained and optimized the company website, decreasing page load time by 30% and ensuring 99% uptime.",
+                "Analyzed user behavior and delivered UX recommendations that improved site engagement by 20% across key conversion funnels."
+            ]
+        },
+        {
+            "company": "Clayarts",
+            "role": "Freelance Web Developer",
+            "duration": "Jan 2024 - Apr 2025",
+            "responsibilities": [
+                "https://clayarts.co/",
+                "Architected and deployed a full-stack e-commerce platform, achieving a 25% increase in custom orders and reducing operational overhead by 75%.",
+                "Streamlined secure order and payment processing gateways, reducing checkout processing time by 20%."
+            ]
+        }
+    ],
+    "skills": [
+        "Java Spring Boot",
+        "Python",
+        "Jam Stack",
+        "MERN Stack",
+        "Payload CMS",
+        "REST APIs",
+        "SQL",
+        "PostgreSQL",
+        "MongoDB",
+        "Firestore",
+        "Elasticsearch",
+        "AWS",
+        "GCP",
+        "Hostinger",
+        "Git",
+        "GitHub",
+        "Docker",
+        "Redis",
+        "Kafka",
+        "LLM Integration",
+        "RAG",
+        "Agile & Scrum Development Lifecycle",
+        "Sprint Planning",
+        "Cross-functional Team Collaboration",
+        "Code Review",
+        "Technical Documentation"
+    ],
+    "education": [
+        {
+            "institution": "Visvesvaraya Technological University Bangalore",
+            "degree": "B.E. Computer Science Engineering (AIML)",
+            "duration": "2022-2026",
+            "score": "CGPA: 8.6"
+        },
+        {
+            "institution": "St. Joseph's Pre-University College Bangalore",
+            "degree": "PCMC (Physics, Chemistry, Mathematics, Computer Science)",
+            "duration": "2020-2022",
+            "score": "Percentage: 79%"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Vehicle Traffic Monitoring and Analysis",
+            "description": "Built web dashboard using React-Leaflet, React-STT, Web Speech API, Gemini LLM, Facebook-BART, Firebase. Multi-layered AI Agent reduced operator workload by 90% by accepting simple human queries and routing operations automatically.",
+            "technologies": [
+                "React",
+                "Node",
+                "LLM integration",
+                "GCP"
+            ],
+            "link": "https://traffic-monitoring-and-analysis.vercel.app/"
+        },
+        {
+            "name": "draggrid npm module / drag_drop_swipe",
+            "description": "Published open-source Node.js module enabling dependency-free drag, drop, and swipe, reduces implementation time by 80% with a single line of code.",
+            "technologies": [
+                "JavaScript",
+                "Node.js",
+                "Open Source"
+            ],
+            "link": "https://www.npmjs.com/package/draggrid"
+        },
+        {
+            "name": "OneBox Personal Project",
+            "description": "AI email management system with real-time IMAP sync, RAG-based reply suggestions, and enterprise-grade search. Enforced Slack push notifications and webhook integration, bulk indexing maintained by Docker Elasticsearch.",
+            "technologies": [
+                "React",
+                "Docker",
+                "RAG",
+                "WebHooks",
+                "BeautifulSoup"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/OneBox"
+        },
+        {
+            "name": "University Timetable Generator",
+            "description": "Automated scheduling solving 100+ constraints using Backtracking, Genetic Algorithms, and OR-Tools. Lowered manual effort by 90%, saving over 100 hours of administrative work per semester.",
+            "technologies": [
+                "Python",
+                "ML",
+                "React"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/TimeTable-generator-MiniProject"
+        },
+        {
+            "name": "Browser Extension - Tracker",
+            "description": "A browser new-page extension that helps users track their daily progress, keeping them focused and productive throughout the day.",
+            "technologies": [
+                "JavaScript",
+                "HTML/CSS",
+                "Browser APIs"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/tracker-browser-newpage-ext"
+        },
+        {
+            "name": "VA-task-executor",
+            "description": "A desktop voice assistant that listens and executes local system commands like opening apps, reading files, and navigating URLs.",
+            "technologies": [
+                "Python",
+                "Speech Recognition",
+                "Automation"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/VA-task-executor"
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Google Cybersecurity Professional Certificate",
+            "description": "Networking, Security Operations, Threat Detection, SIEM Tools",
+            "link": "https://www.credly.com/badges/edc07055-e7dc-4345-81ab-2206c836c6a8"
+        },
+        {
+            "name": "AWS Academy Cloud Foundations",
+            "description": "EC2, S3, IAM, VPC, Cloud Architecture",
+            "link": "https://www.credly.com/badges/126a8bfe-0f3e-4803-9e0e-6890f1f34d5b"
+        },
+        {
+            "name": "Red Hat System Administration",
+            "description": "Linux, Shell Scripting, System Services, File Management",
+            "link": "https://www.linkedin.com/in/vaibhavjain-/details/certifications/1708786128754/single-media-viewer"
+        },
+        {
+            "name": "Qspider Devops Certification",
+            "description": "Linux, Shell scripting, Git-GitHub, AWS, Docker",
+            "CIN": "U72200KA2007PTC044701"
+        },
+        {
+            "name": "UiPath RPA Credential",
+            "Cred": "G-2025-G4592-0048"
+        },
+        {
+            "name": "Blue Prism Associate Developer",
+            "link": "https://aictecert.eduskillsfoundation.org/pages/home/verify.php?cert=7da9a939e9fcb83d6d5e28af068681df"
+        }
+    ],
+    "achievements": [
+        {
+            "title": "DigitalOcean & Chicago Codex Open Source Recognition",
+            "description": "Recognized by DigitalOcean and Chicago Codex with goodies for open source contribution for two consecutive years (2024–2025)."
+        },
+        {
+            "title": "Hack-A-City 2.0 Top 10 Finish",
+            "description": "Competed in AI/ML-focused hackathon at City Engineering College, achieving a top 10 finish among 200+ teams across Karnataka."
+        },
+        {
+            "title": "Kodikon 3.0 Top 40 Finish",
+            "description": "Participated in a 24-hour national-level hackathon at PES University, ranked in the top 40 teams out of hundreds of participants."
+        }
+    ],
+    "social_links": {
+        "portfolio": "https://vaibhav-jain.me",
+        "linkedin": "https://www.linkedin.com/in/vaibhavjain-",
+        "github": "https://github.com/v-aibha-v-jain",
+        "leetcode": "https://leetcode.com/u/Vaibhav-Jain",
+        "geeksforgeeks": "https://geeksforgeeks.org/profile/vjvg6x4s",
+        "holopin": "https://holopin.io/@vaibhavjain1",
+        "credly": "https://credly.com/vaibhav-jain"
+    },
+    "help": {
+        "/api/about": "To get summary of the portfolio, including name, phone number, email, total experience years",
+        "/api/exp": "To get the 'experience' section of the portfolio",
+        "/api/skills": "To get the 'skills' section of the portfolio",
+        "/api/education": "To get the 'education' section of the portfolio",
+        "/api/projects": "To get the 'projects' section of the portfolio",
+        "/api/certifications": "To get the 'certifications' section of the portfolio",
+        "/api/achievements": "To get the 'achievements' section of the portfolio",
+        "/api/socials": "To get the 'social_links' section of the portfolio, including links to social media profile"
+    }
+}

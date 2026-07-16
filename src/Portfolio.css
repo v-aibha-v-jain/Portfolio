@@ -922,6 +922,12 @@ nav {
     transform: scale(1.05);
 }
 
+.about-text,
+.contact-info,
+.footer-newsletter{
+    text-align: left;
+}
+
 .about-text {
     flex: 1;
     animation: slideInRight 0.8s ease-out;
