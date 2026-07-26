@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.860cc3a2.css",
-    "main.js": "/static/js/main.a1b76845.js",
+    "main.css": "/static/css/main.202717c6.css",
+    "main.js": "/static/js/main.78cee7c9.js",
     "static/media/about.webp": "/static/media/about.4d4848bbd1a349a2892b.webp",
-    "static/media/va.webp": "/static/media/va.e05b5c660569e4b1a17d.webp",
     "static/media/profile.webp": "/static/media/profile.3dafe4c5ada8a13a6bab.webp",
-    "static/media/tracker.webp": "/static/media/tracker.d6e717b33636305f680a.webp",
-    "static/media/tt.webp": "/static/media/tt.ae91e603e0b9982645ac.webp",
-    "static/media/dds.webp": "/static/media/dds.dfafb8523fa281ffb890.webp",
-    "static/media/cli.webp": "/static/media/cli.e245efc89a89124de314.webp",
-    "static/media/dsa.webp": "/static/media/dsa.e0e6b29fcf069e7fd16c.webp",
-    "static/media/agent.webp": "/static/media/agent.46d46c491342230ae90f.webp",
-    "static/media/traffic.webp": "/static/media/traffic.5f20141fbf13196cb00b.webp",
-    "static/media/goto.webp": "/static/media/goto.74c4e1e632572ec59d7d.webp",
-    "static/media/onebox.webp": "/static/media/onebox.bd9d55db58c8f22f47c7.webp",
     "index.html": "/index.html",
-    "main.860cc3a2.css.map": "/static/css/main.860cc3a2.css.map",
-    "main.a1b76845.js.map": "/static/js/main.a1b76845.js.map"
+    "main.202717c6.css.map": "/static/css/main.202717c6.css.map",
+    "main.78cee7c9.js.map": "/static/js/main.78cee7c9.js.map"
   },
   "entrypoints": [
-    "static/css/main.860cc3a2.css",
-    "static/js/main.a1b76845.js"
+    "static/css/main.202717c6.css",
+    "static/js/main.78cee7c9.js"
   ]
 }
