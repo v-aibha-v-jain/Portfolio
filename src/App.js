@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Lenis from 'lenis';
 import './App.css';
 import './Portfolio.css';
 import Header from './components/Header';
@@ -32,24 +31,6 @@ const PortfolioPage = () => {
 };
 
 function App() {
-  useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-      lerp: 0.04,
-      smoothWheel: true,
-      wheelMultiplier: 0.3
-    });
-
-    window.lenis = lenis;
-
-    return () => {
-      lenis.destroy();
-      if (window.lenis === lenis) {
-        window.lenis = null;
-      }
-    };
-  }, []);
-
   return (
     <Router>
       <div className="App">

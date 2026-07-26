@@ -8,7 +8,7 @@ const Hero = () => {
   const location = useLocation();
 
   const scrollToSection = (sectionId) => {
-    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
+    scrollToElement(sectionId);
   };
 
   const handleContactClick = (e) => {
@@ -27,7 +27,7 @@ const Hero = () => {
         <div className="hero-content">
           <h1>Hi, I'm <span>Vaibhav Jain</span></h1>
           <h2>Software Developer</h2>
-          <p>Software Engineer and Open-Source Contributor experienced in startup and freelance ecosystems. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes.</p>
+          <p>Software developer from Bangalore, shipping fast, production ready applications. My work spans full-stack development, open source projects, and cloud infrastructure bridging clean frontends with solid backends and automated CI/CD pipelines.</p>
           <div className="hero-buttons">
             <a href="/#contact" className="btn btn-secondary" onClick={handleContactClick}>Contact Me</a>
           </div>

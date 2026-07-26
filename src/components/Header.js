@@ -29,7 +29,7 @@ const Header = () => {
   };
 
   const scrollToSection = (sectionId) => {
-    scrollToElement(sectionId, { duration: 1.4, lerp: 0.08 });
+    scrollToElement(sectionId);
     setIsMenuOpen(false);
   };
 
