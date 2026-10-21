@@ -517,7 +517,7 @@ function ContactPage() {
     }[form.topic];
 
     try {
-      await addDoc(collection(db, 'message'), {
+      await addDoc(collection(db, 'contacts'), {
         name: form.name.trim(),
         email: form.email.trim(),
         subject,
