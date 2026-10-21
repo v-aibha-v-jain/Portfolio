@@ -27,6 +27,84 @@
       "type": "Project"
     },
     {
+      "id": 16,
+      "title": "Vehicle Traffic Monitoring and Analysis",
+      "company": "Personal Project",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "ongoing": false,
+      "description": "Built a web dashboard using React-Leaflet, React-STT, Web Speech API, Gemini LLM, Facebook-BART, and Firebase. A multi-layered AI agent reduced operator workload by 90% by accepting simple human queries and routing operations automatically.",
+      "tags": ["React", "Node", "LLM Integration", "GCP"],
+      "link": [{"Live Demo": "https://traffic-monitoring-and-analysis.vercel.app/"}],
+      "bg": "traffic.webp",
+      "type": "Project"
+    },
+    {
+      "id": 17,
+      "title": "OneBox",
+      "company": "Personal Project",
+      "startDate": "2025-01-01",
+      "endDate": "2025-12-31",
+      "ongoing": false,
+      "description": "AI email management system with real-time IMAP sync, RAG-based reply suggestions, and enterprise-grade search. Includes Slack push notifications, webhook integration, and bulk indexing maintained by Docker Elasticsearch.",
+      "tags": ["React", "Docker", "RAG", "WebHooks"],
+      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/OneBox"}],
+      "bg": "onebox.webp",
+      "type": "Project"
+    },
+    {
+      "id": 18,
+      "title": "Google Cybersecurity Professional Certificate",
+      "company": "Google",
+      "startDate": "2025-01-01",
+      "endDate": "2025-01-01",
+      "ongoing": false,
+      "description": "Professional certificate covering networking, security operations, threat detection, and SIEM tools.",
+      "tags": ["Cybersecurity", "Threat Detection", "SIEM"],
+      "link": [{"Credly": "https://www.credly.com/badges/edc07055-e7dc-4345-81ab-2206c836c6a8"}],
+      "bg": "gc.webp",
+      "type": "Certificate"
+    },
+    {
+      "id": 19,
+      "title": "AWS Academy Cloud Foundations",
+      "company": "AWS Academy",
+      "startDate": "2025-01-01",
+      "endDate": "2025-01-01",
+      "ongoing": false,
+      "description": "Certificate covering EC2, S3, IAM, VPC, and cloud architecture fundamentals.",
+      "tags": ["AWS", "Cloud", "EC2", "S3"],
+      "link": [{"Credly": "https://www.credly.com/badges/126a8bfe-0f3e-4803-9e0e-6890f1f34d5b"}],
+      "bg": "gc.webp",
+      "type": "Certificate"
+    },
+    {
+      "id": 20,
+      "title": "Red Hat System Administration",
+      "company": "Red Hat",
+      "startDate": "2025-01-01",
+      "endDate": "2025-01-01",
+      "ongoing": false,
+      "description": "Certificate covering Linux, shell scripting, system services, and file management.",
+      "tags": ["Linux", "Shell Scripting", "System Administration"],
+      "link": [{"Certificate": "https://www.linkedin.com/in/vaibhavjain-/details/certifications/1708786128754/single-media-viewer"}],
+      "bg": "ison.webp",
+      "type": "Certificate"
+    },
+    {
+      "id": 21,
+      "title": "Qspider DevOps Certification",
+      "company": "Qspiders",
+      "startDate": "2025-01-01",
+      "endDate": "2025-01-01",
+      "ongoing": false,
+      "description": "Certification covering Linux, shell scripting, Git, GitHub, AWS, and Docker.",
+      "tags": ["DevOps", "Linux", "Git", "AWS", "Docker"],
+      "link": [],
+      "bg": "ison.webp",
+      "type": "Certificate"
+    },
+    {
       "id": 2,
       "title": "CLIBrowser",
       "description": "Browser extension with a terminal-style interface",
@@ -37,32 +115,6 @@
       "tags": ["JavaScript", "Browser Extension", "Terminal"],
       "link": [{"GitHub": "https://github.com/v-aibha-v-jain/clibrowser"}],
       "bg": "cli.webp",
-      "type": "Project"
-    },
-    {
-      "id": 3,
-      "title": "GoTo",
-      "company": "Open source contribution",
-      "startDate": "2025-10-01",
-      "endDate": "2025-10-31",
-      "ongoing": false,
-      "description": "Browser extension for quick navigation and shortcuts",
-      "tags": ["JavaScript", "Browser Extension", "Open Source"],
-      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/GoTo"}],
-      "bg": "goto.webp",
-      "type": "Project"
-    },
-    {
-      "id": 4,
-      "title": "DecodeDsa",
-      "description": "Open source contribution, visualize DSA problems and solutions",
-      "company": "Open source contribution",
-      "startDate": "2025-10-01",
-      "endDate": "2025-10-31",
-      "ongoing": false,
-      "tags": ["JavaScript", "Visualization", "Open Source"],
-      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/DecodeDsa"}],
-      "bg": "ddsa.webp",
       "type": "Project"
     },
     {
@@ -79,19 +131,6 @@
       "type": "Project"
     },
     {
-      "id": 2,
-      "title": "Email-classifier",
-      "company": "Personal Project",
-      "startDate": "2025-10-16",
-      "endDate": "2025-10-17",
-      "ongoing": false,
-      "description": "Built and deployed a Next.js/React application integrating the Gmail API with OpenAI GPT-4o to automatically categorize incoming emails into 6 distinct labels (e.g., Promotions, Important, Spam). This system achieved a 92% classification accuracy in testing.",
-      "tags": ["Next.js", "react-router", "GCP OAuth", "GCP Gmail plugin", "OpenAI GPT-4o"],
-      "link": [{"Website": "https://email-classifier-liart.vercel.app/", "GitHub": "https://github.com/v-aibha-v-jain/email-classifier"}],
-      "bg": "email.webp",
-      "type": "Project"
-    },
-    {
       "id": 3,
       "title": "Drag_drop_swipe",
       "company": "Open source contribution",
@@ -102,19 +141,6 @@
       "tags": ["JavaScript", "Node", "Module", "npm i draggrid"],
       "link": [{"npm package": "https://www.npmjs.com/package/draggrid"}],
       "bg": "drag.webp",
-      "type": "Project"
-    },
-    {
-      "id": 4,
-      "title": "MoodyAiBot",
-      "company": "Personal Project",
-      "startDate": "2025-08-01",
-      "endDate": "2025-08-16",
-      "ongoing": false,
-      "description": "Designed an Angular-based AI chatbot, integrating the Gemini API to generate multi-modal responses and improve conversational flow and user engagement",
-      "tags": ["Angular", "OpenAI", "ChatBot"],
-      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/MoodyAiBot"}],
-      "bg": "moody.webp",
       "type": "Project"
     },
     {
@@ -141,32 +167,6 @@
       "tags": ["No-code", "Bubble.io", "Automation", "Healthcare"],
       "link": [{"GitHub": "https://github.com/v-aibha-v-jain/HOSPITAL-MANAGEMENT-SYSTEM.git"}],
       "bg": "bub.webp",
-      "type": "Project"
-    },
-    {
-      "id": 7,
-      "title": "Elcostra",
-      "company": "Open Source Project",
-      "startDate": "2024-10-01",
-      "endDate": "2024-10-31",
-      "ongoing": false,
-      "description": "Developed and enhanced a web-based JSON viewer for an open-source project, improving data visualization for developers.",
-      "tags": ["Web", "JSON", "Visualization", "Open Source"],
-      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/elcostra.git"}],
-      "bg": "ison.webp",
-      "type": "Project"
-    },
-    {
-      "id": 8,
-      "title": "ForkTheCaptcha",
-      "company": "Open Source Project",
-      "startDate": "2024-10-01",
-      "endDate": "2024-10-31",
-      "ongoing": false,
-      "description": "Contributed to the ForkTheCaptcha open-source project, developing algorithms to generate robust captcha models from synthetic fonts. This improved the security of the project and reduced bot attack success rates by an estimated 40%.",
-      "tags": ["Security", "Captcha", "Open Source", "Algorithms"],
-      "link": [{"GitHub": "https://github.com/v-aibha-v-jain/ForkTheCaptcha.git"}],
-      "bg": "capt.webp",
       "type": "Project"
     },
     {
@@ -197,15 +197,15 @@
     },
     {
       "id": 11,
-      "title": "Freelance",
-      "company": "Clayarts",
-      "startDate": "2024-01-15",
-      "endDate": "2025-04-15",
-      "ongoing": false,
-      "description": "Created the company website and developed a drag-and-drop mechanism for customizing name plates, allowing users to personalize their designs interactively.",
-      "tags": ["Web Development", "MJS", "Hostinger", "API", "Mechanism", "JavaScript", "Frontend", "Backend", "Deployment", "UX/UI"],
-      "link": [{"Website": "https://clayarts.co"}],
-      "bg": "clayarts.webp",
+      "title": "Product Engineer",
+      "company": "FrontM",
+      "startDate": "2026-09-01",
+      "endDate": null,
+      "ongoing": true,
+      "description": "Build micro-applications based on client requirements using JavaScript, React, MongoDB, and AWS.",
+      "tags": ["Product Engineering", "JavaScript", "React", "MongoDB", "AWS", "Micro-applications", "Client Solutions"],
+      "link": [],
+      "bg": "",
       "type": "Exp"
     },
     {

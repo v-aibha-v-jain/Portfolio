@@ -1,7 +1,7 @@
 {
     "basics": {
         "name": "Vaibhav Jain",
-        "total_exp_years": "1.5 Years",
+        "total_exp_years": "1+ Years",
         "gender": "Male",
         "location": {
             "city": "Bengaluru",
@@ -9,12 +9,21 @@
         },
         "phone_number": "+91-9164225221",
         "email": "vaibhavjain.vjv@gmail.com",
-        "about": "AI Full-Stack Engineer with a track record of building optimized applications and production-ready AI systems. Experienced in shipping scalable apps, launching open-source packages, and deploying LLM/RAG pipelines. Expert at combining modern frontend frameworks with robust backend architectures to drive measurable business results."
+        "about": "Product Engineer and IT Consultant experienced in startup and freelance ecosystems. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes."
     },
     "experience": [
         {
+            "company": "FrontM",
+            "role": "Product Engineer",
+            "duration": "Sep 2026 - Present",
+            "responsibilities": [
+                "Build micro-applications based on client requirements using JavaScript, React, MongoDB, and AWS.",
+                "Translate client needs into practical, reliable software solutions."
+            ]
+        },
+        {
             "company": "Updot Solutions LLP",
-            "role": "Software Development Engineer (Contract)",
+            "role": "Software Development Engineer",
             "duration": "Mar 2026 - May 2026",
             "responsibilities": [
                 "Engineered content-driven websites using Astro and Nuxt with Island Architecture, achieving 40% faster page load times and improved Core Web Vitals scores.",
@@ -39,45 +48,68 @@
                 "Maintained and optimized the company website, decreasing page load time by 30% and ensuring 99% uptime.",
                 "Analyzed user behavior and delivered UX recommendations that improved site engagement by 20% across key conversion funnels."
             ]
-        },
-        {
-            "company": "Clayarts",
-            "role": "Freelance Web Developer",
-            "duration": "Jan 2024 - Apr 2025",
-            "responsibilities": [
-                "https://clayarts.co/",
-                "Architected and deployed a full-stack e-commerce platform, achieving a 25% increase in custom orders and reducing operational overhead by 75%.",
-                "Streamlined secure order and payment processing gateways, reducing checkout processing time by 20%."
-            ]
         }
     ],
     "skills": [
-        "Java Spring Boot",
-        "Python",
-        "Jam Stack",
-        "MERN Stack",
-        "Payload CMS",
-        "REST APIs",
-        "SQL",
-        "PostgreSQL",
-        "MongoDB",
-        "Firestore",
-        "Elasticsearch",
-        "AWS",
-        "GCP",
-        "Hostinger",
-        "Git",
-        "GitHub",
-        "Docker",
-        "Redis",
-        "Kafka",
-        "LLM Integration",
-        "RAG",
-        "Agile & Scrum Development Lifecycle",
-        "Sprint Planning",
-        "Cross-functional Team Collaboration",
-        "Code Review",
-        "Technical Documentation"
+        {
+            "category": "Languages & Frameworks",
+            "items": [
+                "Java",
+                "Node.js",
+                "React",
+                "Express",
+                "Angular",
+                "Vue",
+                "Nuxt",
+                "Astro"
+            ]
+        },
+        {
+            "category": "CMS & Backend Tools",
+            "items": [
+                "Payload CMS",
+                "Node.js",
+                "REST APIs"
+            ]
+        },
+        {
+            "category": "Databases",
+            "items": [
+                "MongoDB",
+                "Firestore",
+                "Elasticsearch"
+            ]
+        },
+        {
+            "category": "Cloud & DevOps",
+            "items": [
+                "AWS",
+                "AWS Lambda",
+                "GCP",
+                "Vercel",
+                "Hostinger",
+                "Git",
+                "GitHub",
+                "Docker",
+                "Redis"
+            ]
+        },
+        {
+            "category": "Automation & AI",
+            "items": [
+                "BeautifulSoup",
+                "LLM Integration"
+            ]
+        },
+        {
+            "category": "Soft Skills",
+            "items": [
+                "Agile & Scrum Development Lifecycle",
+                "Code Review",
+                "Technical Documentation",
+                "Debugging"
+            ]
+        }
     ],
     "education": [
         {
@@ -206,9 +238,9 @@
         "portfolio": "https://vaibhav-jain.me",
         "linkedin": "https://www.linkedin.com/in/vaibhavjain-",
         "github": "https://github.com/v-aibha-v-jain",
-        "leetcode": "https://leetcode.com/u/Vaibhav-Jain",
         "geeksforgeeks": "https://geeksforgeeks.org/profile/vjvg6x4s",
-        "holopin": "https://holopin.io/@vaibhavjain1",
+        "instagram": "https://www.instagram.com/whybhaw",
+        "whatsapp": "https://wa.me/whybhaw",
         "credly": "https://credly.com/vaibhav-jain"
     },
     "help": {
