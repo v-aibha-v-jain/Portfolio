@@ -223,6 +223,13 @@ a { color: inherit; text-decoration: none; }
   -webkit-overflow-scrolling: touch;
   touch-action: pan-y;
 }
+.content-section-skills {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
 .content-section:not(.content-section-experience) {
   justify-content: flex-start;
 }
