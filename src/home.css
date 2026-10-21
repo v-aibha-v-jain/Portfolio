@@ -215,6 +215,11 @@ a { color: inherit; text-decoration: none; }
   opacity: 1; transform: translateX(0);
   pointer-events: all;
 }
+.content-section-experience {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
 .content-section:not(.content-section-experience) {
   justify-content: flex-start;
 }
