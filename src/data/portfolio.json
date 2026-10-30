@@ -9,12 +9,21 @@
         },
         "phone_number": "+91-9164225221",
         "email": "vaibhavjain.vjv@gmail.com",
-        "about": "AI Full-Stack Engineer with a track record of building optimized applications and production-ready AI systems. Experienced in shipping scalable apps, launching open-source packages, and deploying LLM/RAG pipelines. Expert at combining modern frontend frameworks with robust backend architectures to drive measurable business results."
+        "about": "Product Engineer and IT Consultant experienced in startup and freelance ecosystems. I develop software and produce solutions, and apply machine learning concepts to projects for smarter outcomes."
     },
     "experience": [
         {
+            "company": "FrontM",
+            "role": "Product Engineer",
+            "duration": "Sep 2026 - Present",
+            "responsibilities": [
+                "Build micro-applications based on client requirements using JavaScript, React, MongoDB, and AWS.",
+                "Translate client needs into practical, reliable software solutions."
+            ]
+        },
+        {
             "company": "Updot Solutions LLP",
-            "role": "Software Development Engineer (Contract)",
+            "role": "Software Development Engineer",
             "duration": "Mar 2026 - May 2026",
             "responsibilities": [
                 "Engineered content-driven websites using Astro and Nuxt with Island Architecture, achieving 40% faster page load times and improved Core Web Vitals scores.",
@@ -52,32 +61,35 @@
         }
     ],
     "skills": [
-        "Java Spring Boot",
-        "Python",
-        "Jam Stack",
-        "MERN Stack",
+        "Java",
+        "Node.js",
+        "React",
+        "Express",
+        "Angular",
+        "Vue",
+        "Nuxt",
+        "Astro",
         "Payload CMS",
         "REST APIs",
-        "SQL",
-        "PostgreSQL",
         "MongoDB",
         "Firestore",
         "Elasticsearch",
         "AWS",
+        "AWS Lambda",
         "GCP",
+        "Vercel",
         "Hostinger",
         "Git",
         "GitHub",
         "Docker",
         "Redis",
-        "Kafka",
+        "Beautiful Soup",
         "LLM Integration",
-        "RAG",
-        "Agile & Scrum Development Lifecycle",
-        "Sprint Planning",
-        "Cross-functional Team Collaboration",
+        "Agile & Scrum",
+        "Development Lifecycle",
         "Code Review",
-        "Technical Documentation"
+        "Technical Documentation",
+        "Debugging"
     ],
     "education": [
         {
@@ -95,8 +107,19 @@
     ],
     "projects": [
         {
+            "name": "VA-task-executor",
+            "description": "Desktop voice assistant that listens and executes commands (open app/file/folder/url, read files, etc.).",
+            "technologies": [
+                "Python",
+                "SpeechRecognition",
+                "pyttsx3",
+                "LLM"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/VA-task-executor"
+        },
+        {
             "name": "Vehicle Traffic Monitoring and Analysis",
-            "description": "Built web dashboard using React-Leaflet, React-STT, Web Speech API, Gemini LLM, Facebook-BART, Firebase. Multi-layered AI Agent reduced operator workload by 90% by accepting simple human queries and routing operations automatically.",
+            "description": "Built a web dashboard using React-Leaflet, React-STT, Web Speech API, Gemini LLM, Facebook-BART, and Firebase. A multi-layered AI agent reduced operator workload by 90% by accepting simple human queries and routing operations automatically.",
             "technologies": [
                 "React",
                 "Node",
@@ -106,56 +129,67 @@
             "link": "https://traffic-monitoring-and-analysis.vercel.app/"
         },
         {
-            "name": "draggrid npm module / drag_drop_swipe",
-            "description": "Published open-source Node.js module enabling dependency-free drag, drop, and swipe, reduces implementation time by 80% with a single line of code.",
-            "technologies": [
-                "JavaScript",
-                "Node.js",
-                "Open Source"
-            ],
-            "link": "https://www.npmjs.com/package/draggrid"
-        },
-        {
-            "name": "OneBox Personal Project",
-            "description": "AI email management system with real-time IMAP sync, RAG-based reply suggestions, and enterprise-grade search. Enforced Slack push notifications and webhook integration, bulk indexing maintained by Docker Elasticsearch.",
+            "name": "OneBox",
+            "description": "An email management system with real-time IMAP sync, RAG-based reply suggestions, and enterprise-grade search. Includes Slack push notifications, webhook integration, and bulk indexing maintained by Docker Elasticsearch.",
             "technologies": [
                 "React",
                 "Docker",
                 "RAG",
-                "WebHooks",
-                "BeautifulSoup"
+                "Webhooks"
             ],
             "link": "https://github.com/v-aibha-v-jain/OneBox"
         },
         {
-            "name": "University Timetable Generator",
-            "description": "Automated scheduling solving 100+ constraints using Backtracking, Genetic Algorithms, and OR-Tools. Lowered manual effort by 90%, saving over 100 hours of administrative work per semester.",
+            "name": "CLIBrowser",
+            "description": "Browser extension with a terminal-style interface.",
             "technologies": [
-                "Python",
-                "ML",
-                "React"
+                "JavaScript",
+                "Browser Extension",
+                "Terminal"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/clibrowser"
+        },
+        {
+            "name": "Agent-task-manager",
+            "description": "Developed and deployed a secure MERN stack (MongoDB, Express, React, Node.js) application featuring JWT authentication and automated CSV/Excel task processing via Multer. The system maintained 100% data integrity upon file upload.",
+            "technologies": [
+                "MERN",
+                "JWT",
+                "Automation"
+            ],
+            "link": "https://github.com/v-aibha-v-jain/agent-task-manager"
+        },
+        {
+            "name": "Drag_drop_swipe",
+            "description": "Developed an open-source Node.js module enabling dependency-free drag, drop, and swipe interactions, compatible with both Node.js and vanilla HTML projects.",
+            "technologies": [
+                "JavaScript",
+                "Node",
+                "Module",
+                "npm draggrid"
+            ],
+            "link": "https://www.npmjs.com/package/draggrid"
+        },
+        {
+            "name": "University Time-table generator",
+            "description": "Automated the scheduling process for a university time-table generator, solving over 100 constraints across departments and labs. This reduced manual effort by 90% and saved over 100 hours of administrative work per semester using Backtracking, Genetic Algorithms, and OR-Tools.",
+            "technologies": [
+                "JavaScript",
+                "Node",
+                "Module"
             ],
             "link": "https://github.com/v-aibha-v-jain/TimeTable-generator-MiniProject"
         },
         {
-            "name": "Browser Extension - Tracker",
-            "description": "A browser new-page extension that helps users track their daily progress, keeping them focused and productive throughout the day.",
+            "name": "HOSPITAL-MANAGEMENT-SYSTEM",
+            "description": "Built a comprehensive no-code hospital management system using Bubble.io, which streamlined patient registration, appointment scheduling, and record management, reducing administrative time by an estimated 30%.",
             "technologies": [
-                "JavaScript",
-                "HTML/CSS",
-                "Browser APIs"
+                "No-code",
+                "Bubble.io",
+                "Automation",
+                "Healthcare"
             ],
-            "link": "https://github.com/v-aibha-v-jain/tracker-browser-newpage-ext"
-        },
-        {
-            "name": "VA-task-executor",
-            "description": "A desktop voice assistant that listens and executes local system commands like opening apps, reading files, and navigating URLs.",
-            "technologies": [
-                "Python",
-                "Speech Recognition",
-                "Automation"
-            ],
-            "link": "https://github.com/v-aibha-v-jain/VA-task-executor"
+            "link": "https://github.com/v-aibha-v-jain/HOSPITAL-MANAGEMENT-SYSTEM.git"
         }
     ],
     "certifications": [

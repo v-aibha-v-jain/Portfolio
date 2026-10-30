@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import portfolioData from '../data/portfolio.json';
 
 const getProjectSlug = (repo) => repo
   .trim()
@@ -13,88 +14,54 @@ const getSocialifyImageUrl = (repo, isDarkTheme) => {
   return `https://socialify.git.ci/v-aibha-v-jain/${encodeURIComponent(slug)}/image?description=1&font=Inter&forks=1&issues=1&language=1&name=1&refresh=1&owner=1&pattern=${encodeURIComponent(pattern)}&stargazers=1&theme=${theme}`;
 };
 
-const projects = [
-  {
-    id: 1,
-    repo: 'Traffic-Monitoring-and-Analysis-System',
-    title: 'Vehile traffic Monitoring and Analysis',
-    description: 'University major project focused on monitoring and analyzing vehicle traffic using Agentic AI and computer vision techniques',
-    categories: ['web', 'ui', 'ml', 'py'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/Traffic-Monitoring-and-Analysis-System', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 2,
-    repo: 'tracker-browser-newpage-ext',
-    title: 'Browser Extension - Tracker',
-    description: 'A browser new page extension that helps user track their daily progress and help them stay focused and productive throughout the day',
-    categories: ['web', 'js', 'ui', 'opensource'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/tracker-browser-newpage-ext', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 3,
-    repo: 'portfolio-api',
-    title: 'Portfolio - API',
-    description: 'A REST API for managing and displaying portfolio projects and experiences',
-    categories: ['java'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/portfolio-api', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 4,
-    repo: 'VA-task-executor',
-    title: 'VA-task-executor',
-    description: 'Desktop voice assistant that listens and executes commands (open app/file/folder/url, read files, etc.)',
-    categories: ['app', 'ml', 'py'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/VA-task-executor', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 5,
-    repo: 'drag_drop_swipe',
-    title: 'drag_drop_swipe | draggrid',
-    description: 'Open Source, Drag, Drop and Swipe node module',
-    categories: ['js', 'ui', 'opensource'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/drag_drop_swipe.git', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 6,
-    repo: 'OneBox',
-    title: 'OneBox',
-    description: 'An intelligent email management system with real-time IMAP sync, AI-powered categorization, RAG-based reply suggestions, and enterprise-grade search capabilities.',
-    categories: ['web', 'js', 'ml', 'py'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/OneBox', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 7,
-    repo: 'clibrowser',
-    title: 'CLIBrowser',
-    description: 'Browser extension with a terminal-style interface',
-    categories: ['web', 'ui', 'js', 'opensource'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/clibrowser', icon: 'fab fa-github', text: 'GitHub' }
-    ]
-  },
-  {
-    id: 8,
-    repo: 'TimeTable-generator-MiniProject',
-    title: 'University Timetable Generator',
-    description: 'AI-powered timetable generator for universities, optimizing class schedules based on various constraints and preferences',
-    categories: ['web', 'js', 'ui', 'ml', 'py'],
-    links: [
-      { url: 'https://github.com/v-aibha-v-jain/TimeTable-generator-MiniProject', icon: 'fab fa-github', text: 'GitHub' }
-    ]
+const projects = portfolioData.projects.map((project, index) => {
+  const projectName = project.name.toLowerCase();
+  const technologyNames = project.technologies.map((technology) => technology.toLowerCase());
+  const categories = ['web'];
+
+  if (technologyNames.some((technology) => technology.includes('javascript') || technology.includes('node'))) {
+    categories.push('js');
   }
-];
+  if (technologyNames.some((technology) => technology.includes('python'))) {
+    categories.push('py');
+  }
+  if (technologyNames.some((technology) => technology.includes('java'))) {
+    categories.push('java');
+  }
+  if (technologyNames.some((technology) => technology.includes('react') || technology.includes('browser') || technology.includes('ui'))) {
+    categories.push('ui');
+  }
+  if (technologyNames.some((technology) => technology.includes('llm') || technology.includes('rag') || technology.includes('ai'))) {
+    categories.push('ml');
+  }
+  if (technologyNames.some((technology) => technology.includes('open source') || technology.includes('npm'))) {
+    categories.push('opensource');
+  }
+
+  const repoNames = {
+    'va-task-executor': 'VA-task-executor',
+    'vehicle traffic monitoring and analysis': 'Traffic-Monitoring-and-Analysis-System',
+    onebox: 'OneBox',
+    clibrowser: 'clibrowser',
+    'agent-task-manager': 'agent-task-manager',
+    drag_drop_swipe: 'drag_drop_swipe',
+    'university time-table generator': 'TimeTable-generator-MiniProject',
+    'hospital-management-system': 'HOSPITAL-MANAGEMENT-SYSTEM',
+    'smart india hackathon 2023': 'Portfolio'
+  };
+  const repo = repoNames[projectName] || 'Portfolio';
+
+  return {
+    id: index + 1,
+    repo,
+    title: project.name,
+    description: project.description,
+    categories,
+    links: project.link
+      ? [{ url: project.link, icon: project.link.includes('npmjs') ? 'fab fa-npm' : 'fab fa-github', text: project.link.includes('npmjs') ? 'NPM Package' : 'GitHub' }]
+      : []
+  };
+});
 
 const filters = [
   { key: 'all', label: 'All' },

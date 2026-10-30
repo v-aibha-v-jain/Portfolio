@@ -191,7 +191,7 @@ const Contact = () => {
           <div className="footer-content">
             <div className="footer-logo">
               <h2>Vaibhav<span>Jain</span></h2>
-              <p>Software Developer</p>
+              <p>Product Engineer</p>
             </div>
             <div className="footer-newsletter">
               <h3>Newsletter</h3>

@@ -36,8 +36,8 @@ const About = () => {
           </div>
           <div className="about-text">
             <h3>Who am I?</h3>
-            <p>I'm a passionate software developer with expertise in full-stack development, cloud technologies (AWS, Firebase), and machine learning. I have worked in various startups, communitities and freelance projects, used different technology everytime based on the requirement</p>
-            <p>I Love exploring new tech everyday, work on different projects and contribute to open source. Currently working on building applications with automation and learning Kafka and Terraform.</p>
+            <p>I'm a Product Engineer and IT Consultant experienced in startup and freelance ecosystems. I build practical software solutions across frontend, backend, cloud, and automation, choosing the right technology for each product and client requirement.</p>
+            <p>I enjoy turning ideas into reliable products, exploring machine learning applications, and contributing to open source. My work combines product thinking with hands-on engineering to create smarter outcomes.</p>
             <div className="about-details">
               <div className="detail">
                 <i className="fas fa-user"></i>
