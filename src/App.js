@@ -12,7 +12,6 @@ import Projects from './components/Projects';
 import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
-import CliMode from './components/CliMode';
 import KnightSprite from './components/KnightSprite';
 
 const PortfolioPage = () => {
@@ -36,7 +35,6 @@ function App() {
     <Router>
       <div className="App">
         <CustomCursor />
-        <CliMode />
         <KnightSprite />
         <Routes>
           <Route path="/" element={<PortfolioPage />} />
