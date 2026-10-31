@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.202717c6.css",
-    "main.js": "/static/js/main.4bcd07eb.js",
+    "main.css": "/static/css/main.f4ef2357.css",
+    "main.js": "/static/js/main.9f7b8ba3.js",
     "static/media/about.jpeg": "/static/media/about.8cad46055c045c65b710.jpeg",
     "static/media/profile.webp": "/static/media/profile.3dafe4c5ada8a13a6bab.webp",
+    "static/media/knight-sword.png": "/static/media/knight-sword.fc3342633c880a79390f.png",
     "index.html": "/index.html",
-    "main.202717c6.css.map": "/static/css/main.202717c6.css.map",
-    "main.4bcd07eb.js.map": "/static/js/main.4bcd07eb.js.map"
+    "main.f4ef2357.css.map": "/static/css/main.f4ef2357.css.map",
+    "main.9f7b8ba3.js.map": "/static/js/main.9f7b8ba3.js.map"
   },
   "entrypoints": [
-    "static/css/main.202717c6.css",
-    "static/js/main.4bcd07eb.js"
+    "static/css/main.f4ef2357.css",
+    "static/js/main.9f7b8ba3.js"
   ]
 }
