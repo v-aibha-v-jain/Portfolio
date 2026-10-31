@@ -13,6 +13,7 @@ import Certificates from './components/Certificates';
 import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import CliMode from './components/CliMode';
+import KnightSprite from './components/KnightSprite';
 
 const PortfolioPage = () => {
   return (
@@ -36,6 +37,7 @@ function App() {
       <div className="App">
         <CustomCursor />
         <CliMode />
+        <KnightSprite />
         <Routes>
           <Route path="/" element={<PortfolioPage />} />
         </Routes>

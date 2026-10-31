@@ -1,55 +1,29 @@
-import React, { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
+import cursorImage from '../assets/sprites/knight-sword.png';
 import './CustomCursor.css';
 
 const CustomCursor = () => {
   const cursorRef = useRef(null);
-  const tailRef = useRef(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
-    const tail = tailRef.current;
-    
-    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
-    gsap.set(tail, { xPercent: -50, yPercent: -50 });
-
-    const onMouseMove = (e) => {
-      // Main cursor moves quickly
-      gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.1,
-        ease: 'power2.out',
-      });
-      // Tail moves slower to create trailing effect
-      gsap.to(tail, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.5,
-        ease: 'power2.out',
-      });
+    const moveCursor = (event) => {
+      cursor.style.transform = `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
     };
 
-    window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mousemove', moveCursor);
 
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove);
-    };
+    return () => window.removeEventListener('mousemove', moveCursor);
   }, []);
 
   return (
-    <>
-      <div 
-        className="custom-cursor-tail" 
-        ref={tailRef} 
-        style={{ left: 0, top: 0 }}
-      />
-      <div 
-        className="custom-cursor" 
-        ref={cursorRef} 
-        style={{ left: 0, top: 0 }}
-      />
-    </>
+    <img
+      ref={cursorRef}
+      className="custom-cursor"
+      src={cursorImage}
+      alt=""
+      aria-hidden="true"
+    />
   );
 };
 
