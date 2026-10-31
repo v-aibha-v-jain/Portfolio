@@ -18,3 +18,9 @@
   outline: 2px solid currentColor;
   outline-offset: 4px;
 }
+
+@media (pointer: coarse) {
+  .knight-sprite:focus {
+    outline: none;
+  }
+}
